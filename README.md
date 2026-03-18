@@ -120,19 +120,22 @@ SEO記事は以下のフローで制作しています。
 ### 前提条件
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) がインストール済み
-- `/company` スキルが利用可能（[cc-company プラグイン](https://github.com/your-org/cc-company)）
+- [cc-company](https://github.com/Shin-sibainu/cc-company) プラグインがインストール済み
 
 ### 始め方
 
 ```bash
-# リポジトリをクローン
-git clone https://github.com/bocek/openclaw-implementation-support.git
+# 1. cc-company プラグインをインストール（初回のみ）
+claude install-plugin https://github.com/Shin-sibainu/cc-company
+
+# 2. リポジトリをクローン
+git clone https://github.com/Bocek-Inc/openclaw-implementation-support.git
 cd openclaw-implementation-support
 
-# Claude Codeを起動
+# 3. Claude Codeを起動
 claude
 
-# 秘書に話しかける
+# 4. 秘書に話しかける
 /company
 ```
 
