@@ -1,0 +1,1003 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content-area"
+    - generic [ref=e5]:
+      - generic [ref=e9]:
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - link "OpenClaw home page light logo" [ref=e14] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e15]: OpenClaw home page
+              - img "light logo" [ref=e16]
+            - button "US English" [ref=e18] [cursor=pointer]:
+              - img "US" [ref=e20]
+              - generic [ref=e22]: English
+              - img [ref=e23]
+          - button "Open search" [ref=e26] [cursor=pointer]:
+            - generic [ref=e27]:
+              - img [ref=e28]
+              - generic [ref=e31]: Search...
+            - generic [ref=e32]: ⌘K
+          - generic [ref=e33]:
+            - navigation [ref=e34]:
+              - list [ref=e35]:
+                - listitem [ref=e36]:
+                  - link "GitHub" [ref=e37] [cursor=pointer]:
+                    - /url: https://github.com/openclaw/openclaw
+                    - img [ref=e38]
+                    - text: GitHub
+                - listitem [ref=e39]:
+                  - link "Releases" [ref=e40] [cursor=pointer]:
+                    - /url: https://github.com/openclaw/openclaw/releases
+                    - img [ref=e41]
+                    - text: Releases
+            - button "Toggle dark mode" [ref=e43] [cursor=pointer]:
+              - img [ref=e44]
+        - generic [ref=e52]:
+          - link "Get started" [ref=e53] [cursor=pointer]:
+            - /url: /
+            - text: Get started
+          - link "Install" [ref=e55] [cursor=pointer]:
+            - /url: /install
+            - text: Install
+          - link "Channels" [ref=e57] [cursor=pointer]:
+            - /url: /channels
+            - text: Channels
+          - link "Agents" [ref=e59] [cursor=pointer]:
+            - /url: /pi
+            - text: Agents
+          - link "Tools" [ref=e61] [cursor=pointer]:
+            - /url: /tools
+            - text: Tools
+          - link "Models" [ref=e63] [cursor=pointer]:
+            - /url: /providers
+            - text: Models
+          - link "Platforms" [ref=e65] [cursor=pointer]:
+            - /url: /platforms
+            - text: Platforms
+          - link "Gateway & Ops" [ref=e67] [cursor=pointer]:
+            - /url: /gateway
+            - text: Gateway & Ops
+          - link "Reference" [ref=e69] [cursor=pointer]:
+            - /url: /cli
+            - text: Reference
+          - link "Help" [ref=e71] [cursor=pointer]:
+            - /url: /help
+            - text: Help
+      - generic [ref=e73]:
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - heading "Overview" [level=5] [ref=e81]
+            - list [ref=e82]:
+              - listitem [ref=e83]:
+                - link "Tools" [ref=e84] [cursor=pointer]:
+                  - /url: /tools
+                  - generic [ref=e86]: Tools
+          - generic [ref=e87]:
+            - heading "Built-in tools" [level=5] [ref=e89]
+            - list [ref=e90]:
+              - listitem [ref=e91]:
+                - link "apply_patch Tool" [ref=e92] [cursor=pointer]:
+                  - /url: /tools/apply-patch
+                  - generic [ref=e94]: apply_patch Tool
+              - listitem [ref=e95]:
+                - link "Brave Search" [ref=e96] [cursor=pointer]:
+                  - /url: /brave-search
+                  - generic [ref=e98]: Brave Search
+              - listitem [ref=e99]:
+                - link "Perplexity Search" [ref=e100] [cursor=pointer]:
+                  - /url: /perplexity
+                  - generic [ref=e102]: Perplexity Search
+              - listitem [ref=e103]:
+                - link "Diffs" [ref=e104] [cursor=pointer]:
+                  - /url: /tools/diffs
+                  - generic [ref=e106]: Diffs
+              - listitem [ref=e107]:
+                - link "PDF Tool" [ref=e108] [cursor=pointer]:
+                  - /url: /tools/pdf
+                  - generic [ref=e110]: PDF Tool
+              - listitem [ref=e111]:
+                - link "Elevated Mode" [ref=e112] [cursor=pointer]:
+                  - /url: /tools/elevated
+                  - generic [ref=e114]: Elevated Mode
+              - listitem [ref=e115]:
+                - link "Exec Tool" [ref=e116] [cursor=pointer]:
+                  - /url: /tools/exec
+                  - generic [ref=e118]: Exec Tool
+              - listitem [ref=e119]:
+                - link "Exec Approvals" [ref=e120] [cursor=pointer]:
+                  - /url: /tools/exec-approvals
+                  - generic [ref=e122]: Exec Approvals
+              - listitem [ref=e123]:
+                - link "Firecrawl" [ref=e124] [cursor=pointer]:
+                  - /url: /tools/firecrawl
+                  - generic [ref=e126]: Firecrawl
+              - listitem [ref=e127]:
+                - link "LLM Task" [ref=e128] [cursor=pointer]:
+                  - /url: /tools/llm-task
+                  - generic [ref=e130]: LLM Task
+              - listitem [ref=e131]:
+                - link "Lobster" [ref=e132] [cursor=pointer]:
+                  - /url: /tools/lobster
+                  - generic [ref=e134]: Lobster
+              - listitem [ref=e135]:
+                - link "Tool-loop detection" [ref=e136] [cursor=pointer]:
+                  - /url: /tools/loop-detection
+                  - generic [ref=e138]: Tool-loop detection
+              - listitem [ref=e139]:
+                - link "Reactions" [ref=e140] [cursor=pointer]:
+                  - /url: /tools/reactions
+                  - generic [ref=e142]: Reactions
+              - listitem [ref=e143]:
+                - link "Thinking Levels" [ref=e144] [cursor=pointer]:
+                  - /url: /tools/thinking
+                  - generic [ref=e146]: Thinking Levels
+              - listitem [ref=e147]:
+                - link "Web Tools" [ref=e148] [cursor=pointer]:
+                  - /url: /tools/web
+                  - generic [ref=e150]: Web Tools
+              - listitem [ref=e151]:
+                - link "BTW Side Questions" [ref=e152] [cursor=pointer]:
+                  - /url: /tools/btw
+                  - generic [ref=e154]: BTW Side Questions
+          - generic [ref=e155]:
+            - heading "Browser" [level=5] [ref=e157]
+            - list [ref=e158]:
+              - listitem [ref=e159]:
+                - link "Browser (OpenClaw-managed)" [ref=e160] [cursor=pointer]:
+                  - /url: /tools/browser
+                  - generic [ref=e162]: Browser (OpenClaw-managed)
+              - listitem [ref=e163]:
+                - link "Browser Login" [ref=e164] [cursor=pointer]:
+                  - /url: /tools/browser-login
+                  - generic [ref=e166]: Browser Login
+              - listitem [ref=e167]:
+                - link "Browser Troubleshooting" [ref=e168] [cursor=pointer]:
+                  - /url: /tools/browser-linux-troubleshooting
+                  - generic [ref=e170]: Browser Troubleshooting
+          - generic [ref=e171]:
+            - heading "Agent coordination" [level=5] [ref=e173]
+            - list [ref=e174]:
+              - listitem [ref=e175]:
+                - link "Agent Send" [ref=e176] [cursor=pointer]:
+                  - /url: /tools/agent-send
+                  - generic [ref=e178]: Agent Send
+              - listitem [ref=e179]:
+                - link "Sub-Agents" [ref=e180] [cursor=pointer]:
+                  - /url: /tools/subagents
+                  - generic [ref=e182]: Sub-Agents
+              - listitem [ref=e183]:
+                - link "ACP Agents" [ref=e184] [cursor=pointer]:
+                  - /url: /tools/acp-agents
+                  - generic [ref=e186]: ACP Agents
+              - listitem [ref=e187]:
+                - link "Multi-Agent Sandbox & Tools" [ref=e188] [cursor=pointer]:
+                  - /url: /tools/multi-agent-sandbox-tools
+                  - generic [ref=e190]: Multi-Agent Sandbox & Tools
+          - generic [ref=e191]:
+            - heading "Skills" [level=5] [ref=e193]
+            - list [ref=e194]:
+              - listitem [ref=e195]:
+                - link "Creating Skills" [ref=e196] [cursor=pointer]:
+                  - /url: /tools/creating-skills
+                  - generic [ref=e198]: Creating Skills
+              - listitem [ref=e199]:
+                - link "Slash Commands" [ref=e200] [cursor=pointer]:
+                  - /url: /tools/slash-commands
+                  - generic [ref=e202]: Slash Commands
+              - listitem [ref=e203]:
+                - link "Skills" [ref=e204] [cursor=pointer]:
+                  - /url: /tools/skills
+                  - generic [ref=e206]: Skills
+              - listitem [ref=e207]:
+                - link "Skills Config" [ref=e208] [cursor=pointer]:
+                  - /url: /tools/skills-config
+                  - generic [ref=e210]: Skills Config
+              - listitem [ref=e211]:
+                - link "ClawHub" [ref=e212] [cursor=pointer]:
+                  - /url: /tools/clawhub
+                  - generic [ref=e214]: ClawHub
+              - listitem [ref=e215]:
+                - link "Plugins" [ref=e216] [cursor=pointer]:
+                  - /url: /tools/plugin
+                  - generic [ref=e218]: Plugins
+          - generic [ref=e219]:
+            - heading "Extensions" [level=5] [ref=e221]
+            - list [ref=e222]:
+              - listitem [ref=e223]:
+                - link "Community plugins" [ref=e224] [cursor=pointer]:
+                  - /url: /plugins/community
+                  - generic [ref=e226]: Community plugins
+              - listitem [ref=e227]:
+                - link "Plugin Bundles" [ref=e228] [cursor=pointer]:
+                  - /url: /plugins/bundles
+                  - generic [ref=e230]: Plugin Bundles
+              - listitem [ref=e231]:
+                - link "Voice Call Plugin" [ref=e232] [cursor=pointer]:
+                  - /url: /plugins/voice-call
+                  - generic [ref=e234]: Voice Call Plugin
+              - listitem [ref=e235]:
+                - link "Zalo Personal Plugin" [ref=e236] [cursor=pointer]:
+                  - /url: /plugins/zalouser
+                  - generic [ref=e238]: Zalo Personal Plugin
+              - listitem [ref=e239]:
+                - link "Plugin Manifest" [ref=e240] [cursor=pointer]:
+                  - /url: /plugins/manifest
+                  - generic [ref=e242]: Plugin Manifest
+              - listitem [ref=e243]:
+                - link "Plugin Agent Tools" [ref=e244] [cursor=pointer]:
+                  - /url: /plugins/agent-tools
+                  - generic [ref=e246]: Plugin Agent Tools
+              - listitem [ref=e247]:
+                - link "OpenProse" [ref=e248] [cursor=pointer]:
+                  - /url: /prose
+                  - generic [ref=e250]: OpenProse
+          - generic [ref=e251]:
+            - heading "Automation" [level=5] [ref=e253]
+            - list [ref=e254]:
+              - listitem [ref=e255]:
+                - link "Hooks" [ref=e256] [cursor=pointer]:
+                  - /url: /automation/hooks
+                  - generic [ref=e258]: Hooks
+              - listitem [ref=e259]:
+                - link "Cron Jobs" [ref=e260] [cursor=pointer]:
+                  - /url: /automation/cron-jobs
+                  - generic [ref=e262]: Cron Jobs
+              - listitem [ref=e263]:
+                - link "Cron vs Heartbeat" [ref=e264] [cursor=pointer]:
+                  - /url: /automation/cron-vs-heartbeat
+                  - generic [ref=e266]: Cron vs Heartbeat
+              - listitem [ref=e267]:
+                - link "Automation Troubleshooting" [ref=e268] [cursor=pointer]:
+                  - /url: /automation/troubleshooting
+                  - generic [ref=e270]: Automation Troubleshooting
+              - listitem [ref=e271]:
+                - link "Webhooks" [ref=e272] [cursor=pointer]:
+                  - /url: /automation/webhook
+                  - generic [ref=e274]: Webhooks
+              - listitem [ref=e275]:
+                - link "Gmail PubSub" [ref=e276] [cursor=pointer]:
+                  - /url: /automation/gmail-pubsub
+                  - generic [ref=e278]: Gmail PubSub
+              - listitem [ref=e279]:
+                - link "Polls" [ref=e280] [cursor=pointer]:
+                  - /url: /automation/poll
+                  - generic [ref=e282]: Polls
+              - listitem [ref=e283]:
+                - link "Auth Monitoring" [ref=e284] [cursor=pointer]:
+                  - /url: /automation/auth-monitoring
+                  - generic [ref=e286]: Auth Monitoring
+          - generic [ref=e287]:
+            - heading "Media and devices" [level=5] [ref=e289]
+            - list [ref=e290]:
+              - listitem [ref=e291]:
+                - link "Nodes" [ref=e292] [cursor=pointer]:
+                  - /url: /nodes
+                  - generic [ref=e294]: Nodes
+              - listitem [ref=e295]:
+                - link "Node Troubleshooting" [ref=e296] [cursor=pointer]:
+                  - /url: /nodes/troubleshooting
+                  - generic [ref=e298]: Node Troubleshooting
+              - listitem [ref=e299]:
+                - link "Media Understanding" [ref=e300] [cursor=pointer]:
+                  - /url: /nodes/media-understanding
+                  - generic [ref=e302]: Media Understanding
+              - listitem [ref=e303]:
+                - link "Image and Media Support" [ref=e304] [cursor=pointer]:
+                  - /url: /nodes/images
+                  - generic [ref=e306]: Image and Media Support
+              - listitem [ref=e307]:
+                - link "Audio and Voice Notes" [ref=e308] [cursor=pointer]:
+                  - /url: /nodes/audio
+                  - generic [ref=e310]: Audio and Voice Notes
+              - listitem [ref=e311]:
+                - link "Camera Capture" [ref=e312] [cursor=pointer]:
+                  - /url: /nodes/camera
+                  - generic [ref=e314]: Camera Capture
+              - listitem [ref=e315]:
+                - link "Talk Mode" [ref=e316] [cursor=pointer]:
+                  - /url: /nodes/talk
+                  - generic [ref=e318]: Talk Mode
+              - listitem [ref=e319]:
+                - link "Voice Wake" [ref=e320] [cursor=pointer]:
+                  - /url: /nodes/voicewake
+                  - generic [ref=e322]: Voice Wake
+              - listitem [ref=e323]:
+                - link "Location Command" [ref=e324] [cursor=pointer]:
+                  - /url: /nodes/location-command
+                  - generic [ref=e326]: Location Command
+              - listitem [ref=e327]:
+                - link "Text-to-Speech" [ref=e328] [cursor=pointer]:
+                  - /url: /tts
+                  - generic [ref=e330]: Text-to-Speech
+        - generic [ref=e333]:
+          - banner [ref=e334]:
+            - generic [ref=e335]:
+              - generic [ref=e336]: Skills
+              - heading "Skills" [level=1] [ref=e338]
+          - generic [ref=e339]:
+            - generic [ref=e340]:
+              - text: OpenClaw uses
+              - strong [ref=e341]:
+                - link "AgentSkills" [ref=e342] [cursor=pointer]:
+                  - /url: https://agentskills.io
+                - text: "-compatible"
+              - text: skill folders to teach the agent how to use tools. Each skill is a directory containing a
+              - code [ref=e343]: SKILL.md
+              - text: with YAML frontmatter and instructions. OpenClaw loads
+              - strong [ref=e344]: bundled skills
+              - text: plus optional local overrides, and filters them at load time based on environment, config, and binary presence.
+            - heading "Navigate to header Locations and precedence" [level=2] [ref=e345]:
+              - link "Navigate to header" [ref=e346] [cursor=pointer]:
+                - /url: "#locations-and-precedence"
+                - img [ref=e348]
+              - generic [ref=e350] [cursor=pointer]: Locations and precedence
+            - generic [ref=e351]:
+              - text: Skills are loaded from
+              - strong [ref=e352]: three
+              - text: "places:"
+            - list [ref=e353]:
+              - listitem [ref=e354]:
+                - strong [ref=e355]: Bundled skills
+                - text: ": shipped with the install (npm package or OpenClaw.app)"
+              - listitem [ref=e356]:
+                - strong [ref=e357]: Managed/local skills
+                - text: ":"
+                - code [ref=e358]: ~/.openclaw/skills
+              - listitem [ref=e359]:
+                - strong [ref=e360]: Workspace skills
+                - text: ":"
+                - code [ref=e361]: <workspace>/skills
+            - generic [ref=e362]: "If a skill name conflicts, precedence is:"
+            - generic [ref=e363]:
+              - code [ref=e364]: <workspace>/skills
+              - text: (highest) →
+              - code [ref=e365]: ~/.openclaw/skills
+              - text: → bundled skills (lowest)
+            - generic [ref=e366]:
+              - text: Additionally, you can configure extra skill folders (lowest precedence) via
+              - code [ref=e367]: skills.load.extraDirs
+              - text: in
+              - code [ref=e368]: ~/.openclaw/openclaw.json
+              - text: .
+            - heading "Navigate to header Per-agent vs shared skills" [level=2] [ref=e369]:
+              - link "Navigate to header" [ref=e370] [cursor=pointer]:
+                - /url: "#per-agent-vs-shared-skills"
+                - img [ref=e372]
+              - generic [ref=e374] [cursor=pointer]: Per-agent vs shared skills
+            - generic [ref=e375]:
+              - text: In
+              - strong [ref=e376]: multi-agent
+              - text: "setups, each agent has its own workspace. That means:"
+            - list [ref=e377]:
+              - listitem [ref=e378]:
+                - strong [ref=e379]: Per-agent skills
+                - text: live in
+                - code [ref=e380]: <workspace>/skills
+                - text: for that agent only.
+              - listitem [ref=e381]:
+                - strong [ref=e382]: Shared skills
+                - text: live in
+                - code [ref=e383]: ~/.openclaw/skills
+                - text: (managed/local) and are visible to
+                - strong [ref=e384]: all agents
+                - text: on the same machine.
+              - listitem [ref=e385]:
+                - strong [ref=e386]: Shared folders
+                - text: can also be added via
+                - code [ref=e387]: skills.load.extraDirs
+                - text: (lowest precedence) if you want a common skills pack used by multiple agents.
+            - generic [ref=e388]: "If the same skill name exists in more than one place, the usual precedence applies: workspace wins, then managed/local, then bundled."
+            - heading "Navigate to header Plugins + skills" [level=2] [ref=e389]:
+              - link "Navigate to header" [ref=e390] [cursor=pointer]:
+                - /url: "#plugins-+-skills"
+                - img [ref=e392]
+              - generic [ref=e394] [cursor=pointer]: Plugins + skills
+            - generic [ref=e395]:
+              - text: Plugins can ship their own skills by listing
+              - code [ref=e396]: skills
+              - text: directories in
+              - code [ref=e397]: openclaw.plugin.json
+              - text: (paths relative to the plugin root). Plugin skills load when the plugin is enabled and participate in the normal skill precedence rules. You can gate them via
+              - code [ref=e398]: metadata.openclaw.requires.config
+              - text: on the plugin’s config entry. See
+              - link "Plugins" [ref=e399] [cursor=pointer]:
+                - /url: /tools/plugin
+              - text: for discovery/config and
+              - link "Tools" [ref=e400] [cursor=pointer]:
+                - /url: /tools
+              - text: for the tool surface those skills teach.
+            - heading "Navigate to header ClawHub (install + sync)" [level=2] [ref=e401]:
+              - link "Navigate to header" [ref=e402] [cursor=pointer]:
+                - /url: "#clawhub-install-+-sync"
+                - img [ref=e404]
+              - generic [ref=e406] [cursor=pointer]: ClawHub (install + sync)
+            - generic [ref=e407]:
+              - text: ClawHub is the public skills registry for OpenClaw. Browse at
+              - link "https://clawhub.com" [ref=e408] [cursor=pointer]:
+                - /url: https://clawhub.com
+              - text: ". Use it to discover, install, update, and back up skills. Full guide:"
+              - link "ClawHub" [ref=e409] [cursor=pointer]:
+                - /url: /tools/clawhub
+              - text: .
+            - generic [ref=e410]: "Common flows:"
+            - list [ref=e411]:
+              - listitem [ref=e412]:
+                - text: "Install a skill into your workspace:"
+                - list [ref=e413]:
+                  - listitem [ref=e414]:
+                    - code [ref=e415]: clawhub install <skill-slug>
+              - listitem [ref=e416]:
+                - text: "Update all installed skills:"
+                - list [ref=e417]:
+                  - listitem [ref=e418]:
+                    - code [ref=e419]: clawhub update --all
+              - listitem [ref=e420]:
+                - text: "Sync (scan + publish updates):"
+                - list [ref=e421]:
+                  - listitem [ref=e422]:
+                    - code [ref=e423]: clawhub sync --all
+            - generic [ref=e424]:
+              - text: By default,
+              - code [ref=e425]: clawhub
+              - text: installs into
+              - code [ref=e426]: ./skills
+              - text: under your current working directory (or falls back to the configured OpenClaw workspace). OpenClaw picks that up as
+              - code [ref=e427]: <workspace>/skills
+              - text: on the next session.
+            - heading "Navigate to header Security notes" [level=2] [ref=e428]:
+              - link "Navigate to header" [ref=e429] [cursor=pointer]:
+                - /url: "#security-notes"
+                - img [ref=e431]
+              - generic [ref=e433] [cursor=pointer]: Security notes
+            - list [ref=e434]:
+              - listitem [ref=e435]:
+                - text: Treat third-party skills as
+                - strong [ref=e436]: untrusted code
+                - text: . Read them before enabling.
+              - listitem [ref=e437]:
+                - text: Prefer sandboxed runs for untrusted inputs and risky tools. See
+                - link "Sandboxing" [ref=e438] [cursor=pointer]:
+                  - /url: /gateway/sandboxing
+                - text: .
+              - listitem [ref=e439]:
+                - text: Workspace and extra-dir skill discovery only accepts skill roots and
+                - code [ref=e440]: SKILL.md
+                - text: files whose resolved realpath stays inside the configured root.
+              - listitem [ref=e441]:
+                - code [ref=e442]: skills.entries.*.env
+                - text: and
+                - code [ref=e443]: skills.entries.*.apiKey
+                - text: inject secrets into the
+                - strong [ref=e444]: host
+                - text: process for that agent turn (not the sandbox). Keep secrets out of prompts and logs.
+              - listitem [ref=e445]:
+                - text: For a broader threat model and checklists, see
+                - link "Security" [ref=e446] [cursor=pointer]:
+                  - /url: /gateway/security
+                - text: .
+            - heading "Navigate to header Format (AgentSkills + Pi-compatible)" [level=2] [ref=e447]:
+              - link "Navigate to header" [ref=e448] [cursor=pointer]:
+                - /url: "#format-agentskills-+-pi-compatible"
+                - img [ref=e450]
+              - generic [ref=e452] [cursor=pointer]: Format (AgentSkills + Pi-compatible)
+            - generic [ref=e453]:
+              - code [ref=e454]: SKILL.md
+              - text: "must include at least:"
+            - generic [ref=e455]:
+              - generic [ref=e457]:
+                - button "Copy the contents from the code block" [ref=e458] [cursor=pointer]:
+                  - img [ref=e459]
+                - generic [ref=e462]: Copy
+              - code [ref=e466]:
+                - generic [ref=e467]: "---"
+                - generic [ref=e468]: "name: nano-banana-pro"
+                - generic [ref=e469]: "description: Generate or edit images via Gemini 3 Pro Image"
+                - generic [ref=e470]: "---"
+            - generic [ref=e471]: "Notes:"
+            - list [ref=e472]:
+              - listitem [ref=e473]: We follow the AgentSkills spec for layout/intent.
+              - listitem [ref=e474]:
+                - text: The parser used by the embedded agent supports
+                - strong [ref=e475]: single-line
+                - text: frontmatter keys only.
+              - listitem [ref=e476]:
+                - code [ref=e477]: metadata
+                - text: should be a
+                - strong [ref=e478]: single-line JSON object
+                - text: .
+              - listitem [ref=e479]:
+                - text: Use
+                - code [ref=e480]: "{baseDir}"
+                - text: in instructions to reference the skill folder path.
+              - listitem [ref=e481]:
+                - text: "Optional frontmatter keys:"
+                - list [ref=e482]:
+                  - listitem [ref=e483]:
+                    - generic [ref=e484]:
+                      - code [ref=e485]: homepage
+                      - text: — URL surfaced as “Website” in the macOS Skills UI (also supported via
+                      - code [ref=e486]: metadata.openclaw.homepage
+                      - text: ).
+                  - listitem [ref=e487]:
+                    - generic [ref=e488]:
+                      - code [ref=e489]: user-invocable
+                      - text: —
+                      - code [ref=e490]: true|false
+                      - text: "(default:"
+                      - code [ref=e491]: "true"
+                      - text: ). When
+                      - code [ref=e492]: "true"
+                      - text: ", the skill is exposed as a user slash command."
+                  - listitem [ref=e493]:
+                    - generic [ref=e494]:
+                      - code [ref=e495]: disable-model-invocation
+                      - text: —
+                      - code [ref=e496]: true|false
+                      - text: "(default:"
+                      - code [ref=e497]: "false"
+                      - text: ). When
+                      - code [ref=e498]: "true"
+                      - text: ", the skill is excluded from the model prompt (still available via user invocation)."
+                  - listitem [ref=e499]:
+                    - generic [ref=e500]:
+                      - code [ref=e501]: command-dispatch
+                      - text: —
+                      - code [ref=e502]: tool
+                      - text: (optional). When set to
+                      - code [ref=e503]: tool
+                      - text: ", the slash command bypasses the model and dispatches directly to a tool."
+                  - listitem [ref=e504]:
+                    - generic [ref=e505]:
+                      - code [ref=e506]: command-tool
+                      - text: — tool name to invoke when
+                      - code [ref=e507]: "command-dispatch: tool"
+                      - text: is set.
+                  - listitem [ref=e508]:
+                    - generic [ref=e509]:
+                      - code [ref=e510]: command-arg-mode
+                      - text: —
+                      - code [ref=e511]: raw
+                      - text: (default). For tool dispatch, forwards the raw args string to the tool (no core parsing).
+                    - generic [ref=e512]:
+                      - text: "The tool is invoked with params:"
+                      - code [ref=e513]: "{ command: \"<raw args>\", commandName: \"<slash command>\", skillName: \"<skill name>\" }"
+                      - text: .
+            - heading "Navigate to header Gating (load-time filters)" [level=2] [ref=e514]:
+              - link "Navigate to header" [ref=e515] [cursor=pointer]:
+                - /url: "#gating-load-time-filters"
+                - img [ref=e517]
+              - generic [ref=e519] [cursor=pointer]: Gating (load-time filters)
+            - generic [ref=e520]:
+              - text: OpenClaw
+              - strong [ref=e521]: filters skills at load time
+              - text: using
+              - code [ref=e522]: metadata
+              - text: "(single-line JSON):"
+            - generic [ref=e523]:
+              - generic [ref=e525]:
+                - button "Copy the contents from the code block" [ref=e526] [cursor=pointer]:
+                  - img [ref=e527]
+                - generic [ref=e530]: Copy
+              - code [ref=e534]:
+                - generic [ref=e535]: "---"
+                - generic [ref=e536]: "name: nano-banana-pro"
+                - generic [ref=e537]: "description: Generate or edit images via Gemini 3 Pro Image"
+                - generic [ref=e538]: "metadata:"
+                - generic [ref=e539]: "{"
+                - generic [ref=e540]: "\"openclaw\":"
+                - generic [ref=e541]: "{"
+                - generic [ref=e542]: "\"requires\": { \"bins\": [\"uv\"], \"env\": [\"GEMINI_API_KEY\"], \"config\": [\"browser.enabled\"] },"
+                - generic [ref=e543]: "\"primaryEnv\": \"GEMINI_API_KEY\","
+                - generic [ref=e544]: "},"
+                - generic [ref=e545]: "}"
+                - generic [ref=e546]: "---"
+            - generic [ref=e547]:
+              - text: Fields under
+              - code [ref=e548]: metadata.openclaw
+              - text: ":"
+            - list [ref=e549]:
+              - listitem [ref=e550]:
+                - code [ref=e551]: "always: true"
+                - text: — always include the skill (skip other gates).
+              - listitem [ref=e552]:
+                - code [ref=e553]: emoji
+                - text: — optional emoji used by the macOS Skills UI.
+              - listitem [ref=e554]:
+                - code [ref=e555]: homepage
+                - text: — optional URL shown as “Website” in the macOS Skills UI.
+              - listitem [ref=e556]:
+                - code [ref=e557]: os
+                - text: — optional list of platforms (
+                - code [ref=e558]: darwin
+                - text: ","
+                - code [ref=e559]: linux
+                - text: ","
+                - code [ref=e560]: win32
+                - text: ). If set, the skill is only eligible on those OSes.
+              - listitem [ref=e561]:
+                - code [ref=e562]: requires.bins
+                - text: — list; each must exist on
+                - code [ref=e563]: PATH
+                - text: .
+              - listitem [ref=e564]:
+                - code [ref=e565]: requires.anyBins
+                - text: — list; at least one must exist on
+                - code [ref=e566]: PATH
+                - text: .
+              - listitem [ref=e567]:
+                - code [ref=e568]: requires.env
+                - text: — list; env var must exist
+                - strong [ref=e569]: or
+                - text: be provided in config.
+              - listitem [ref=e570]:
+                - code [ref=e571]: requires.config
+                - text: — list of
+                - code [ref=e572]: openclaw.json
+                - text: paths that must be truthy.
+              - listitem [ref=e573]:
+                - code [ref=e574]: primaryEnv
+                - text: — env var name associated with
+                - code [ref=e575]: skills.entries.<name>.apiKey
+                - text: .
+              - listitem [ref=e576]:
+                - code [ref=e577]: install
+                - text: — optional array of installer specs used by the macOS Skills UI (brew/node/go/uv/download).
+            - generic [ref=e578]: "Note on sandboxing:"
+            - list [ref=e579]:
+              - listitem [ref=e580]:
+                - code [ref=e581]: requires.bins
+                - text: is checked on the
+                - strong [ref=e582]: host
+                - text: at skill load time.
+              - listitem [ref=e583]:
+                - text: If an agent is sandboxed, the binary must also exist
+                - strong [ref=e584]: inside the container
+                - text: . Install it via
+                - code [ref=e585]: agents.defaults.sandbox.docker.setupCommand
+                - text: (or a custom image).
+                - code [ref=e586]: setupCommand
+                - text: "runs once after the container is created. Package installs also require network egress, a writable root FS, and a root user in the sandbox. Example: the"
+                - code [ref=e587]: summarize
+                - text: skill (
+                - code [ref=e588]: skills/summarize/SKILL.md
+                - text: ) needs the
+                - code [ref=e589]: summarize
+                - text: CLI in the sandbox container to run there.
+            - generic [ref=e590]: "Installer example:"
+            - generic [ref=e591]:
+              - generic [ref=e593]:
+                - button "Copy the contents from the code block" [ref=e594] [cursor=pointer]:
+                  - img [ref=e595]
+                - generic [ref=e598]: Copy
+              - code [ref=e602]:
+                - generic [ref=e603]: "---"
+                - generic [ref=e604]: "name: gemini"
+                - generic [ref=e605]: "description: Use Gemini CLI for coding assistance and Google search lookups."
+                - generic [ref=e606]: "metadata:"
+                - generic [ref=e607]: "{"
+                - generic [ref=e608]: "\"openclaw\":"
+                - generic [ref=e609]: "{"
+                - generic [ref=e610]: "\"emoji\": \"♊️\","
+                - generic [ref=e611]: "\"requires\": { \"bins\": [\"gemini\"] },"
+                - generic [ref=e612]: "\"install\":"
+                - generic [ref=e613]: "["
+                - generic [ref=e614]: "{"
+                - generic [ref=e615]: "\"id\": \"brew\","
+                - generic [ref=e616]: "\"kind\": \"brew\","
+                - generic [ref=e617]: "\"formula\": \"gemini-cli\","
+                - generic [ref=e618]: "\"bins\": [\"gemini\"],"
+                - generic [ref=e619]: "\"label\": \"Install Gemini CLI (brew)\","
+                - generic [ref=e620]: "},"
+                - generic [ref=e621]: "],"
+                - generic [ref=e622]: "},"
+                - generic [ref=e623]: "}"
+                - generic [ref=e624]: "---"
+            - generic [ref=e625]: "Notes:"
+            - list [ref=e626]:
+              - listitem [ref=e627]:
+                - text: If multiple installers are listed, the gateway picks a
+                - strong [ref=e628]: single
+                - text: preferred option (brew when available, otherwise node).
+              - listitem [ref=e629]:
+                - text: If all installers are
+                - code [ref=e630]: download
+                - text: ", OpenClaw lists each entry so you can see the available artifacts."
+              - listitem [ref=e631]:
+                - text: Installer specs can include
+                - code [ref=e632]: "os: [\"darwin\"|\"linux\"|\"win32\"]"
+                - text: to filter options by platform.
+              - listitem [ref=e633]:
+                - text: Node installs honor
+                - code [ref=e634]: skills.install.nodeManager
+                - text: in
+                - code [ref=e635]: openclaw.json
+                - text: "(default: npm; options: npm/pnpm/yarn/bun). This only affects"
+                - strong [ref=e636]: skill installs
+                - text: ; the Gateway runtime should still be Node (Bun is not recommended for WhatsApp/Telegram).
+              - listitem [ref=e637]:
+                - text: "Go installs: if"
+                - code [ref=e638]: go
+                - text: is missing and
+                - code [ref=e639]: brew
+                - text: is available, the gateway installs Go via Homebrew first and sets
+                - code [ref=e640]: GOBIN
+                - text: to Homebrew’s
+                - code [ref=e641]: bin
+                - text: when possible.
+              - listitem [ref=e642]:
+                - text: "Download installs:"
+                - code [ref=e643]: url
+                - text: (required),
+                - code [ref=e644]: archive
+                - text: (
+                - code [ref=e645]: tar.gz
+                - text: "|"
+                - code [ref=e646]: tar.bz2
+                - text: "|"
+                - code [ref=e647]: zip
+                - text: ),
+                - code [ref=e648]: extract
+                - text: "(default: auto when archive detected),"
+                - code [ref=e649]: stripComponents
+                - text: ","
+                - code [ref=e650]: targetDir
+                - text: "(default:"
+                - code [ref=e651]: ~/.openclaw/tools/<skillKey>
+                - text: ).
+            - generic [ref=e652]:
+              - text: If no
+              - code [ref=e653]: metadata.openclaw
+              - text: is present, the skill is always eligible (unless disabled in config or blocked by
+              - code [ref=e654]: skills.allowBundled
+              - text: for bundled skills).
+            - heading "Navigate to header Config overrides (~/.openclaw/openclaw.json)" [level=2] [ref=e655]:
+              - link "Navigate to header" [ref=e656] [cursor=pointer]:
+                - /url: "#config-overrides-/-openclaw/openclaw-json"
+                - img [ref=e658]
+              - generic [ref=e660] [cursor=pointer]:
+                - text: Config overrides (
+                - code [ref=e661]: ~/.openclaw/openclaw.json
+                - text: )
+            - generic [ref=e662]: "Bundled/managed skills can be toggled and supplied with env values:"
+            - generic [ref=e663]:
+              - generic [ref=e665]:
+                - button "Copy the contents from the code block" [ref=e666] [cursor=pointer]:
+                  - img [ref=e667]
+                - generic [ref=e670]: Copy
+              - code [ref=e674]:
+                - generic [ref=e675]: "{"
+                - generic [ref=e676]: "skills: {"
+                - generic [ref=e677]: "entries: {"
+                - generic [ref=e678]: "\"nano-banana-pro\": {"
+                - generic [ref=e679]: "enabled: true,"
+                - generic [ref=e680]: "apiKey: { source: \"env\", provider: \"default\", id: \"GEMINI_API_KEY\" }, // or plaintext string"
+                - generic [ref=e681]: "env: {"
+                - generic [ref=e682]: "GEMINI_API_KEY: \"GEMINI_KEY_HERE\","
+                - generic [ref=e683]: "},"
+                - generic [ref=e684]: "config: {"
+                - generic [ref=e685]: "endpoint: \"https://example.invalid\","
+                - generic [ref=e686]: "model: \"nano-pro\","
+                - generic [ref=e687]: "},"
+                - generic [ref=e688]: "},"
+                - generic [ref=e689]: "peekaboo: { enabled: true },"
+                - generic [ref=e690]: "sag: { enabled: false },"
+                - generic [ref=e691]: "},"
+                - generic [ref=e692]: "},"
+                - generic [ref=e693]: "}"
+            - generic [ref=e694]: "Note: if the skill name contains hyphens, quote the key (JSON5 allows quoted keys)."
+            - generic [ref=e695]:
+              - text: Config keys match the
+              - strong [ref=e696]: skill name
+              - text: by default. If a skill defines
+              - code [ref=e697]: metadata.openclaw.skillKey
+              - text: ", use that key under"
+              - code [ref=e698]: skills.entries
+              - text: .
+            - generic [ref=e699]: "Rules:"
+            - list [ref=e700]:
+              - listitem [ref=e701]:
+                - code [ref=e702]: "enabled: false"
+                - text: disables the skill even if it’s bundled/installed.
+              - listitem [ref=e703]:
+                - code [ref=e704]: env
+                - text: ": injected"
+                - strong [ref=e705]: only if
+                - text: the variable isn’t already set in the process.
+              - listitem [ref=e706]:
+                - code [ref=e707]: apiKey
+                - text: ": convenience for skills that declare"
+                - code [ref=e708]: metadata.openclaw.primaryEnv
+                - text: . Supports plaintext string or SecretRef object (
+                - code [ref=e709]: "{ source, provider, id }"
+                - text: ).
+              - listitem [ref=e710]:
+                - code [ref=e711]: config
+                - text: ": optional bag for custom per-skill fields; custom keys must live here."
+              - listitem [ref=e712]:
+                - code [ref=e713]: allowBundled
+                - text: ": optional allowlist for"
+                - strong [ref=e714]: bundled
+                - text: skills only. If set, only bundled skills in the list are eligible (managed/workspace skills unaffected).
+            - heading "Navigate to header Environment injection (per agent run)" [level=2] [ref=e715]:
+              - link "Navigate to header" [ref=e716] [cursor=pointer]:
+                - /url: "#environment-injection-per-agent-run"
+                - img [ref=e718]
+              - generic [ref=e720] [cursor=pointer]: Environment injection (per agent run)
+            - generic [ref=e721]: "When an agent run starts, OpenClaw:"
+            - list [ref=e722]:
+              - listitem [ref=e723]: Reads skill metadata.
+              - listitem [ref=e724]:
+                - text: Applies any
+                - code [ref=e725]: skills.entries.<key>.env
+                - text: or
+                - code [ref=e726]: skills.entries.<key>.apiKey
+                - text: to
+                - code [ref=e727]: process.env
+                - text: .
+              - listitem [ref=e728]:
+                - text: Builds the system prompt with
+                - strong [ref=e729]: eligible
+                - text: skills.
+              - listitem [ref=e730]: Restores the original environment after the run ends.
+            - generic [ref=e731]:
+              - text: This is
+              - strong [ref=e732]: scoped to the agent run
+              - text: ", not a global shell environment."
+            - heading "Navigate to header Session snapshot (performance)" [level=2] [ref=e733]:
+              - link "Navigate to header" [ref=e734] [cursor=pointer]:
+                - /url: "#session-snapshot-performance"
+                - img [ref=e736]
+              - generic [ref=e738] [cursor=pointer]: Session snapshot (performance)
+            - generic [ref=e739]:
+              - text: OpenClaw snapshots the eligible skills
+              - strong [ref=e740]: when a session starts
+              - text: and reuses that list for subsequent turns in the same session. Changes to skills or config take effect on the next new session.
+            - generic [ref=e741]:
+              - text: Skills can also refresh mid-session when the skills watcher is enabled or when a new eligible remote node appears (see below). Think of this as a
+              - strong [ref=e742]: hot reload
+              - text: ": the refreshed list is picked up on the next agent turn."
+            - heading "Navigate to header Remote macOS nodes (Linux gateway)" [level=2] [ref=e743]:
+              - link "Navigate to header" [ref=e744] [cursor=pointer]:
+                - /url: "#remote-macos-nodes-linux-gateway"
+                - img [ref=e746]
+              - generic [ref=e748] [cursor=pointer]: Remote macOS nodes (Linux gateway)
+            - generic [ref=e749]:
+              - text: If the Gateway is running on Linux but a
+              - strong [ref=e750]: macOS node
+              - text: is connected
+              - strong [ref=e751]:
+                - text: with
+                - code [ref=e752]: system.run
+                - text: allowed
+              - text: (Exec approvals security not set to
+              - code [ref=e753]: deny
+              - text: ), OpenClaw can treat macOS-only skills as eligible when the required binaries are present on that node. The agent should execute those skills via the
+              - code [ref=e754]: nodes
+              - text: tool (typically
+              - code [ref=e755]: nodes.run
+              - text: ).
+            - generic [ref=e756]:
+              - text: This relies on the node reporting its command support and on a bin probe via
+              - code [ref=e757]: system.run
+              - text: . If the macOS node goes offline later, the skills remain visible; invocations may fail until the node reconnects.
+            - heading "Navigate to header Skills watcher (auto-refresh)" [level=2] [ref=e758]:
+              - link "Navigate to header" [ref=e759] [cursor=pointer]:
+                - /url: "#skills-watcher-auto-refresh"
+                - img [ref=e761]
+              - generic [ref=e763] [cursor=pointer]: Skills watcher (auto-refresh)
+            - generic [ref=e764]:
+              - text: By default, OpenClaw watches skill folders and bumps the skills snapshot when
+              - code [ref=e765]: SKILL.md
+              - text: files change. Configure this under
+              - code [ref=e766]: skills.load
+              - text: ":"
+            - generic [ref=e767]:
+              - generic [ref=e769]:
+                - button "Copy the contents from the code block" [ref=e770] [cursor=pointer]:
+                  - img [ref=e771]
+                - generic [ref=e774]: Copy
+              - code [ref=e778]:
+                - generic [ref=e779]: "{"
+                - generic [ref=e780]: "skills: {"
+                - generic [ref=e781]: "load: {"
+                - generic [ref=e782]: "watch: true,"
+                - generic [ref=e783]: "watchDebounceMs: 250,"
+                - generic [ref=e784]: "},"
+                - generic [ref=e785]: "},"
+                - generic [ref=e786]: "}"
+            - heading "Navigate to header Token impact (skills list)" [level=2] [ref=e787]:
+              - link "Navigate to header" [ref=e788] [cursor=pointer]:
+                - /url: "#token-impact-skills-list"
+                - img [ref=e790]
+              - generic [ref=e792] [cursor=pointer]: Token impact (skills list)
+            - generic [ref=e793]:
+              - text: When skills are eligible, OpenClaw injects a compact XML list of available skills into the system prompt (via
+              - code [ref=e794]: formatSkillsForPrompt
+              - text: in
+              - code [ref=e795]: pi-coding-agent
+              - text: "). The cost is deterministic:"
+            - list [ref=e796]:
+              - listitem [ref=e797]:
+                - strong [ref=e798]: "Base overhead (only when ≥1 skill):"
+                - text: 195 characters.
+              - listitem [ref=e799]:
+                - strong [ref=e800]: "Per skill:"
+                - text: 97 characters + the length of the XML-escaped
+                - code [ref=e801]: <name>
+                - text: ","
+                - code [ref=e802]: <description>
+                - text: ", and"
+                - code [ref=e803]: <location>
+                - text: values.
+            - generic [ref=e804]: "Formula (characters):"
+            - generic [ref=e805]:
+              - generic [ref=e807]:
+                - button "Copy the contents from the code block" [ref=e808] [cursor=pointer]:
+                  - img [ref=e809]
+                - generic [ref=e812]: Copy
+              - code [ref=e816]:
+                - generic [ref=e817]: total = 195 + Σ (97 + len(name_escaped) + len(description_escaped) + len(location_escaped))
+            - generic [ref=e818]: "Notes:"
+            - list [ref=e819]:
+              - listitem [ref=e820]:
+                - text: XML escaping expands
+                - code [ref=e821]: "& < > \" '"
+                - text: into entities (
+                - code [ref=e822]: "&amp;"
+                - text: ","
+                - code [ref=e823]: "&lt;"
+                - text: ", etc.), increasing length."
+              - listitem [ref=e824]:
+                - text: Token counts vary by model tokenizer. A rough OpenAI-style estimate is ~4 chars/token, so
+                - strong [ref=e825]: 97 chars ≈ 24 tokens
+                - text: per skill plus your actual field lengths.
+            - heading "Navigate to header Managed skills lifecycle" [level=2] [ref=e826]:
+              - link "Navigate to header" [ref=e827] [cursor=pointer]:
+                - /url: "#managed-skills-lifecycle"
+                - img [ref=e829]
+              - generic [ref=e831] [cursor=pointer]: Managed skills lifecycle
+            - generic [ref=e832]:
+              - text: OpenClaw ships a baseline set of skills as
+              - strong [ref=e833]: bundled skills
+              - text: as part of the install (npm package or OpenClaw.app).
+              - code [ref=e834]: ~/.openclaw/skills
+              - text: exists for local overrides (for example, pinning/patching a skill without changing the bundled copy). Workspace skills are user-owned and override both on name conflicts.
+            - heading "Navigate to header Config reference" [level=2] [ref=e835]:
+              - link "Navigate to header" [ref=e836] [cursor=pointer]:
+                - /url: "#config-reference"
+                - img [ref=e838]
+              - generic [ref=e840] [cursor=pointer]: Config reference
+            - generic [ref=e841]:
+              - text: See
+              - link "Skills config" [ref=e842] [cursor=pointer]:
+                - /url: /tools/skills-config
+              - text: for the full configuration schema.
+            - heading "Navigate to header Looking for more skills?" [level=2] [ref=e843]:
+              - link "Navigate to header" [ref=e844] [cursor=pointer]:
+                - /url: "#looking-for-more-skills"
+                - img [ref=e846]
+              - generic [ref=e848] [cursor=pointer]: Looking for more skills?
+            - generic [ref=e849]:
+              - text: Browse
+              - link "https://clawhub.com" [ref=e850] [cursor=pointer]:
+                - /url: https://clawhub.com
+              - text: .
+            - separator [ref=e851]
+          - generic [ref=e852]:
+            - link "Slash Commands" [ref=e853] [cursor=pointer]:
+              - /url: /tools/slash-commands
+              - img [ref=e854]
+              - generic [ref=e856]: Slash Commands
+            - link "Skills Config" [ref=e857] [cursor=pointer]:
+              - /url: /tools/skills-config
+              - generic [ref=e858]: Skills Config
+              - img [ref=e859]
+          - contentinfo [ref=e861]:
+            - link "Powered by This documentation is built and hosted on Mintlify, a developer documentation platform" [ref=e864] [cursor=pointer]:
+              - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=clawdhub
+              - generic [ref=e865]: Powered by
+              - img [ref=e866]
+              - generic [ref=e875]: This documentation is built and hosted on Mintlify, a developer documentation platform
+  - alert [ref=e876]

@@ -1,0 +1,852 @@
+<div style="background: #e8f4fd; border: 2px dashed #4a90d9; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">🖼️ イメージA</p>
+  <p style="color: #555; margin: 0;">アイキャッチ画像（ロブスター＋AI感のビジュアル）</p>
+</div>
+
+<p>「OpenClawって最近よく聞くけど、実際何ができるの？ChatGPTと何が違うの？」と気になっていませんか。</p>
+
+<p>毎日の業務で「この作業、AIに丸ごと任せられたらいいのに…」と感じたことはありませんか。チャットAIに質問はできても、実際にPCを操作して仕事を片付けてくれるところまではやってくれない。そんなもどかしさを感じている方も多いはずです。</p>
+
+<p><strong>OpenClawは、まさにその「AIに仕事を任せる」を実現する次世代のAIエージェントです。</strong></p>
+
+<p>この記事では、OpenClawの基本から、できること、ChatGPTとの違い、セットアップ手順、セキュリティリスクまで徹底的に解説します。</p>
+
+<hr>
+
+<h2>OpenClaw（オープンクロー）とは？</h2>
+
+<h3>PC上で直接タスクをこなす「自律型AIエージェント」</h3>
+
+<p>OpenClawは、あなたのPCやサーバー上で24時間365日稼働し、自律的に仕事をこなしてくれるオープンソースのAIアシスタントです。</p>
+
+<p>ChatGPTやGeminiなどの「チャットAI」は、<strong>あなたがブラウザを開いて質問しに行くツール</strong>です。対してOpenClawは、<strong>あなたのサーバーに常駐して、指示を待ち、自分で考えて行動するAI</strong>です。</p>
+
+<p>OpenClawの仕組みは、人間のアシスタントに例えると分かりやすいです。大きく3つの柱で構成されています。</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>柱</th><th>人間に例えると</th><th>説明</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>①頭脳と記憶</strong></td><td>優秀な頭脳と、あなた専用の業務ノート</td><td>Claude・GPTなどのAIを「頭脳」として接続。さらに永続メモリであなたの名前・好み・仕事のやり方を覚えて、使うほど賢くなる</td></tr>
+<tr><td><strong>②常時稼働</strong></td><td>24時間シフトで常駐する秘書</td><td>サーバー上で24時間動き続け、「毎朝7時にレポートをまとめる」「30分ごとに新着メールをチェックする」といったルーチンワークを自動でこなす</td></tr>
+<tr><td><strong>③手足（ツール連携）</strong></td><td>PCを操作できる「手」と、連絡手段を持つ「口」</td><td>ファイル作成・Web検索・メール送信・カレンダー管理など、実際のアクションを実行できる。Slack・Telegram・LINEなど15以上のチャットアプリとも連携可能</td></tr>
+</tbody>
+</table>
+
+<p>つまりOpenClawは、<strong>頭脳（AI）＋記憶（メモリ）＋手足（ツール）を持った、24時間働くデジタル秘書</strong>です。</p>
+
+<div style="background: #e8f4fd; border: 2px dashed #4a90d9; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">🖼️ イメージB</p>
+  <p style="color: #555; margin: 0;">OpenClawの仕組み図解（3つの柱：頭脳・常時稼働・手足）</p>
+</div>
+
+<h3>名称の変遷（ClaudeBot → Motebot → OpenClaw）</h3>
+
+<p>OpenClawは、もともと「ClaudeBot」という名前で開発されていました。しかし、AI開発元のAnthropicから「Claude」の名前を使わないよう指摘を受け、2026年1月27日に「Motebot」へ改名。その3日後に現在の「OpenClaw」に落ち着きました。</p>
+
+<p>「Claw」はエビやカニのハサミ（爪）を意味しており、ロブスターのアイコンが目印です。</p>
+
+<hr>
+
+<h2>なぜ今、爆発的に人気を集めているのか？</h2>
+
+<p>OpenClawは、2026年3月時点でGitHubスター数27万超えを記録。GitHubとは、世界中のエンジニアがソースコードを公開・共有するプラットフォームで、「スター」はそのプロジェクトへの注目・支持を示す指標です。27万超えという数字はReactを超える、GitHub史上最速クラスの成長ペースです。</p>
+
+<p><strong>なぜここまで注目されているのか？</strong> 理由は主に3つあります。</p>
+
+<p><strong>①開発者の実績が圧倒的</strong></p>
+
+<p>開発者のPeter Steinberger氏は、PDFフレームワーク企業「PSPDFKit」を創業し、ベンチャーキャピタルの出資を一切受けずに約10億人規模のユーザーベースを築いた人物です。技術力と実行力に裏打ちされたプロダクトだからこそ、エンジニアの支持を集めています。</p>
+
+<p><strong>②OpenAIからの注目</strong></p>
+
+<p>2026年2月、Peter Steinberger氏はOpenAIへのジョインを発表。Sam Altman（OpenAI CEO）は、将来のOpenAI製品にOpenClaw的な仕組みを組み込むことを示唆しています。ただし、OpenClaw自体のオープンソース開発は継続すると明言されています。</p>
+
+<p><strong>③AIエージェント時代の到来</strong></p>
+
+<p>コーディングエージェント（Claude Code等）がわずか1年で「当たり前」になったのと同様に、OpenClawのような汎用AIエージェントも、1〜2年で多くの人が使う時代が来ると予測されています。</p>
+
+<hr>
+
+<h2>OpenClawでできること（具体例）</h2>
+
+<div style="background: #e8f4fd; border: 2px dashed #4a90d9; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">🖼️ イメージC</p>
+  <p style="color: #555; margin: 0;">AIが複数タスクを同時にこなすイメージ（メール・カレンダー・チャット等のアイコン）</p>
+</div>
+
+<p>OpenClawは「何でもできる」ツールですが、具体的にどんな使い方ができるのか、実例を中心に紹介します。</p>
+
+<h3>毎朝の情報収集を自動化</h3>
+
+<p>毎朝、複数のアプリやSNSを巡回して情報を集めるのに時間をかけていませんか？OpenClawなら、売上・メトリクス・サポート問い合わせ・SNSダイジェストを1つのメッセージにまとめて、朝7時にSlackやTelegramに自動送信してくれます。</p>
+
+<p>朝は届いたメッセージを読むだけで全体を把握でき、数分で終わります。SNSアプリを直接開かなくなるので、意図せずスクロールして時間を消費する悪循環からも解放されます。</p>
+
+<h3>スマホからバグ修正・本番反映</h3>
+
+<p>外出中にバグ報告が入ったとき、OpenClawならスマホから対応できます。</p>
+
+<p>バグの内容をSlackのエージェントに送信すると、OpenClawがClaude Code（コーディングAI）を起動してバグを修正し、PR（プルリクエスト）を作成。プレビューURLが返ってくるのでスマホで動作確認し、「マージして本番反映して」と指示すれば完了です。</p>
+
+<blockquote>💡 毎回完璧に動くわけではありませんが、「どこからでも軽い修正を指示できる安心感」が大きいと、実際に運用している開発者は語っています。<br>（参考：<a href="https://www.youtube.com/watch?v=X9M1ZqL9RZk" target="_blank" rel="noopener">【OpenClaw】良かった使い方3つ</a>）</blockquote>
+
+<h3>マーケティングの自動化（ステップメール配信）</h3>
+
+<p>個人開発者が最も後回しにしがちなマーケティング。OpenClawなら、cronジョブ（定期実行機能）を使って、フェードアウトしたユーザーにフォローメールを自動配信できます。</p>
+
+<p>サービスの活用方法や使い方のヒントを定期的に送ることで、ユーザーの再ログインやコンテンツ作成などリテンション向上が確認されています。</p>
+
+<h3>スケジュール管理・カレンダー連携</h3>
+
+<p>Google Workspace（Gmail・カレンダー・Drive等）と連携すれば、議事録をOpenClawに送るだけでスケジュールを自動調整してくれます。カレンダーの空き状況を確認し、適切な日時を提案してくれるので、調整のやりとりを大幅に減らせます。</p>
+
+<h3>サブエージェントによる並列調査・レポート作成</h3>
+
+<p>OpenClawには「サブエージェント」機能があり、複数の調査タスクを並列で実行できます。例えば、3つの競合サービスを同時に比較調査させ、結果をレポートにまとめさせることが可能です。</p>
+
+<p>調査→分析→レポート作成という段階的なパイプラインも組めるため、人間が手作業で行うと数時間かかるリサーチを自動化できます。</p>
+
+<hr>
+
+<h2>ChatGPTなどの「チャットAI」との4つの違い</h2>
+
+<div style="background: #e8f4fd; border: 2px dashed #4a90d9; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">🖼️ イメージD</p>
+  <p style="color: #555; margin: 0;">ChatGPT（チャット画面）vs OpenClaw（サーバー+ツール連携）の対比</p>
+</div>
+
+<p>「ChatGPTで十分じゃない？」と思う方も多いでしょう。ここでは、OpenClawとチャットAIの根本的な違いを4つ解説します。</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>比較項目</th><th>ChatGPT等のチャットAI</th><th>OpenClaw</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>①システムアクセス</strong></td><td>テキストで手順を教えるだけ</td><td>ファイル操作・ブラウザ制御を実際に実行</td></tr>
+<tr><td><strong>②操作方法</strong></td><td>専用サイト／アプリを開く必要あり</td><td>Slack・LINE・Telegram等から操作可能</td></tr>
+<tr><td><strong>③記憶</strong></td><td>会話を閉じると文脈が失われる（限定的なメモリ機能あり）</td><td>永続メモリで使うほど最適化される</td></tr>
+<tr><td><strong>④カスタマイズ性</strong></td><td>提供元のサーバー上で動作、カスタマイズに制限あり</td><td>オープンソース、LLM選択・行動ルール等を自由に設定可能</td></tr>
+</tbody>
+</table>
+
+<p>以下、それぞれ詳しく見ていきましょう。</p>
+
+<h3>①システムへのフルアクセス（ファイル操作・ブラウザ制御）</h3>
+
+<p>ChatGPTは、チャットウィンドウの中で回答を生成するだけです。「ファイルを作って」と頼んでも、「こういうコマンドを実行してください」とテキストで手順を教えてくれるだけです。</p>
+
+<p>OpenClawは違います。<strong>サーバー上でファイルの作成・編集・削除を実際に実行します。</strong> ブラウザの操作やターミナルコマンドの実行も可能です。「教えてくれるAI」と「代わりにやってくれるAI」の違いです。</p>
+
+<h3>②使い慣れたチャットアプリから操作可能（Gateway機能）</h3>
+
+<p>OpenClawは、Slack・Telegram・LINE・Discord・WhatsAppなど<strong>15以上のメッセージングプラットフォーム</strong>に対応しています。</p>
+
+<p>つまり、普段使っているチャットアプリからOpenClawに指示を出し、結果を受け取れます。専用アプリのインストールも、ブラウザを開く必要もありません。通勤中にスマホからSlackで「あの作業やっておいて」と一言送るだけで、サーバー上のOpenClawが対応してくれます。</p>
+
+<h3>③永続メモリで使うほど賢くなる</h3>
+
+<p>ChatGPTはブラウザのタブを閉じると、その会話の文脈は失われます（カスタム指示やメモリ機能はありますが、限定的です）。</p>
+
+<p>OpenClawは<strong>永続メモリ</strong>を持っています。あなたの名前、好み、仕事のスタイル、過去の指示内容を記憶し、使えば使うほどあなたに最適化されていきます。初回セットアップ（ブートストラップ）で設定した情報は、会話をリセットしても消えません。</p>
+
+<h3>④ローカル実行によるカスタマイズ性</h3>
+
+<p>ChatGPTはOpenAIのサーバー上で動作するため、ユーザーがカスタマイズできる範囲は限られます。</p>
+
+<p>OpenClawはオープンソースで、あなたのサーバー上で動作します。接続するLLM（Claude、GPT、Gemini、ローカルLLMなど）を自由に選べるほか、ワークスペースの構成やエージェントの行動ルールも細かくカスタマイズできます。</p>
+
+<p>※ ただし、ローカル実行だからといって自動的に安全というわけではありません。セキュリティリスクについては後述の「セキュリティリスク」セクションで詳しく解説しています。</p>
+
+<hr>
+
+<h2>動作環境：OpenClawの理想と現実</h2>
+
+<p>OpenClawを常時稼働させるには、専用の環境が必要です。ここでは「理想の環境」と「手軽に始める方法」の2つを紹介します。</p>
+
+<h3>OpenClawの理想の環境は「Mac mini」</h3>
+
+<p>OpenClawの最大の魅力を引き出せるのは、Mac miniです。その理由は、<strong>Mac miniなら「あなたと同じ世界を見れるAI」になるから</strong>です。</p>
+
+<p>VPS（後述）の場合、OpenClawはインターネット上の隔離されたサーバーで動いています。あなたのPCの中身は見えないし、触れない。言わば<strong>「海外のオフィスにいるリモート秘書」</strong>です。メールやチャットでやりとりはできるけど、あなたの机の上の書類を直接見ることはできません。</p>
+
+<p>Mac miniなら、あなたのデスクの隣で動きます。あなたのPCのファイル、コード、ネットワーク機器に直接アクセスできる。<strong>「隣の席に座っている秘書」</strong>です。あなたが見れるもの＝OpenClawも見れるのです。</p>
+
+<div style="background: #e8f4fd; border: 2px dashed #4a90d9; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">🖼️ イメージE</p>
+  <p style="color: #555; margin: 0;">Mac mini vs VPSの「見える範囲」の違い（図解）</p>
+</div>
+
+<p>具体的にどう違うのか、シーン別に見てみましょう。</p>
+
+<p><strong>Mac miniなら「そのまま通る」指示の例：</strong></p>
+
+<ul>
+<li>「デスクトップにある売上レポート.xlsxを集計して、結果をSlackに送って」→ <strong>Mac mini：◎</strong> そのままファイルを開いて処理できる / <strong>VPS：×</strong> VPS上にファイルがないのでできない</li>
+<li>「このプロジェクトのコードにバグがあるから直して」→ <strong>Mac mini：◎</strong> ローカルのコードをそのまま読み込んで修正できる / <strong>VPS：△</strong> まずコードをVPSにアップロードする必要がある</li>
+<li>「iMessageで○○さんに会議のリマインドを送って」→ <strong>Mac mini：◎</strong> macOSのiMessage機能を使える / <strong>VPS：×</strong> iMessageはmacOS専用のため不可</li>
+<li>「このAI、月額料金を気にせず使い倒したい」→ <strong>Mac mini：◎</strong> Mac mini上でAIモデルを直接動かせば、API料金ゼロ。データも外部に出ないのでより安全 / <strong>VPS：×</strong> 毎月のAPI料金が必要</li>
+</ul>
+
+<p>ただし、Mac miniには<strong>2つのハードルがあります</strong>。</p>
+
+<ul>
+<li><strong>初期投資が高い</strong>：約9.5万円〜（$629〜）。M4 Mac mini 16GBモデルが最低ライン</li>
+<li><strong>セットアップに技術知識が必要</strong>：開封からチャットアプリ連携まで最速70分。Docker・ターミナル等の知識が求められる</li>
+</ul>
+
+<blockquote>💡 Mac miniでのセットアップ方法は別記事で詳しく解説予定です。<br>→「OpenClawをMac miniで構築する方法」（準備中）</blockquote>
+
+<h3>でも高いし難しい…そんなあなたにVPS</h3>
+
+<p>「Mac miniが理想なのはわかったけど、9.5万円はちょっと…」「まず試してみたい」という方には、<strong>VPS（仮想プライベートサーバー）がおすすめ</strong>です。</p>
+
+<p>VPSなら、<strong>月5〜12ドル（約750〜1,800円）で、数分でOpenClawを体験できます。</strong></p>
+
+<p>特にHostingerのOpenClaw専用テンプレートを使えば、<strong>ワンクリックでデプロイ完了</strong>。Dockerやターミナルの知識は一切不要です。</p>
+
+<p>「でもVPSだとOpenClawの意味がないんじゃ…？」と思うかもしれませんが、そんなことはありません。<strong>OpenClawの核心的な機能のほとんどはVPSでも使えます。</strong></p>
+
+<p><strong>VPSでもできること（＝OpenClawの核心機能）：</strong></p>
+
+<ul>
+<li>「毎朝7時に、売上・問い合わせ・SNSの動きをまとめてSlackに送って」→ <strong>できる</strong>。OpenClawがWebやAPIから情報を集めてまとめてくれる</li>
+<li>「このバグ直して」とスマホからSlackで送る → <strong>できる</strong>。VPS上でClaude Codeがコードを修正し、PR作成→プレビューURLを返してくれる</li>
+<li>「フェードアウトしたユーザーにフォローメールを自動配信して」→ <strong>できる</strong>。cronジョブで定期実行</li>
+<li>「この3社の競合サービスを比較調査してレポートにまとめて」→ <strong>できる</strong>。サブエージェントが並列で調査</li>
+<li>「来週の空きを見て、○○さんとの打ち合わせを調整して」→ <strong>できる</strong>。Googleカレンダー連携で自動調整</li>
+</ul>
+
+<p><strong>VPSではできないこと（＝Mac miniならではの機能）：</strong></p>
+
+<ul>
+<li>手元のPCのファイルを直接操作する → VPSからはあなたのPCが見えないため不可</li>
+<li>iMessageでやりとりする → macOS環境が必要なため不可</li>
+<li>API料金ゼロでAIを使い放題 → VPSでローカルLLMを動かすには高額プランが必要</li>
+<li>自宅のNASやスマートホーム機器と連携する → 同じネットワークにいないため不可</li>
+</ul>
+
+<p><strong>VPS(今回セットアップするHostingner)の注意点：</strong></p>
+
+<ul>
+<li><strong>日本リージョンがない</strong>：Hostinger VPSのデータセンターは現在、オランダ・リトアニア・イギリス・アメリカ・シンガポール・ブラジルの6拠点。日本から最も近いのはシンガポールだが、体感上の遅延はほとんど気にならないレベル</li>
+<li><strong>タイムゾーンの制約</strong>：サーバーのタイムゾーンがUTCのため、cronジョブで日本時間を指定するには追加設定が必要な場合がある</li>
+</ul>
+
+<p>つまりVPSは<strong>「OpenClawとは何か」を手軽に体験するための入り口</strong>です。VPSで使い方を覚えてから、Mac miniにステップアップするのもおすすめの流れです。</p>
+
+<h3>比較まとめ</h3>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>項目</th><th>VPS（Hostinger）</th><th>Mac mini</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>イメージ</strong></td><td>海外オフィスのリモート秘書</td><td>隣の席に座っている秘書</td></tr>
+<tr><td><strong>初期コスト</strong></td><td>0円</td><td>約9.5万円〜</td></tr>
+<tr><td><strong>月額コスト</strong></td><td>月5〜12ドル</td><td>電気代のみ（約数百円）</td></tr>
+<tr><td><strong>セットアップ</strong></td><td>20-30分, 比較的簡単</td><td>約70分、技術知識が必要</td></tr>
+<tr><td><strong>常時稼働</strong></td><td>◎</td><td>◎</td></tr>
+<tr><td><strong>手元のファイル操作</strong></td><td>× サーバー内のみ</td><td>◎ ローカルファイルに直接アクセス</td></tr>
+<tr><td><strong>ローカルLLM</strong></td><td>△ 高額プラン必要</td><td>◎ API料金ゼロで運用可</td></tr>
+<tr><td><strong>iMessage連携</strong></td><td>×</td><td>◎</td></tr>
+<tr><td><strong>日本リージョン</strong></td><td>× なし</td><td>◎ 自宅で動作</td></tr>
+</tbody>
+</table>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>こんな方に</th><th>おすすめ</th></tr>
+</thead>
+<tbody>
+<tr><td>まず試してみたい・初期費用を抑えたい</td><td><strong>VPS</strong></td></tr>
+<tr><td>長期的にコストを抑えたい・API料金をゼロにしたい</td><td><strong>Mac mini</strong></td></tr>
+<tr><td>手元のPCのファイルをAIに操作させたい</td><td><strong>Mac mini</strong></td></tr>
+<tr><td>とりあえず動かしてみたい（常時稼働は不要）</td><td><strong>自分のPC</strong></td></tr>
+</tbody>
+</table>
+
+<h3>セキュリティについて（VPS・Mac mini共通）</h3>
+
+<p><strong>VPSでもMac miniでも、OpenClawにはセキュリティリスクがあります。</strong> 「Mac miniなら手元にデータがあるから安全」と思いがちですが、実際にはそうとは限りません。</p>
+
+<ul>
+<li>OpenClawのGatewayはデフォルトで外部からアクセス可能な設定になっている</li>
+<li>APIキーや認証情報が平文で保存される</li>
+<li>LLMが読み取ったデータは、応答を通じて外部に漏洩する可能性がある</li>
+<li>すでにOpenClawの認証情報を狙うマルウェアが確認されている</li>
+</ul>
+
+<p><strong>VPS・Mac miniどちらを使う場合でも、機密データを扱う前にセキュリティ対策を必ず行ってください。</strong> 詳しくは本記事のセキュリティセクションで解説しています。</p>
+
+<hr>
+
+<h2>VPSとは？</h2>
+
+<p>VPSとは、インターネット上に借りられる「自分専用のパソコン」のようなものです。月額数百円〜で利用でき、24時間電源が入ったまま動き続けるため、OpenClawの常時稼働に適しています。</p>
+
+<p>自分のPCでもOpenClawは動かせますが、PCの電源を切ると停止してしまいます。VPSなら常に動き続けるので、寝ている間もOpenClawが仕事をしてくれます。</p>
+
+<h3>なぜ「常時稼働」が重要なのか？</h3>
+
+<p>OpenClawの大きな強みは、<strong>あなたが寝ている間や外出中にも自律的に動いてくれること</strong>です。</p>
+
+<p>例えば、「毎朝7時に売上レポートをSlackに送って」「フェードアウトしたユーザーにフォローメールを自動配信して」といった指示は、24時間動き続けているからこそ実現できます。PCの電源を切ってしまうと、朝のブリーフィングも自動配信も止まってしまいます。</p>
+
+<p>OpenClawの真価を発揮するには、常時稼働できる環境が必要です。</p>
+
+<p>この記事ではVPSでのセットアップを解説します。</p>
+
+<blockquote>💡 Mac miniでの構築方法は別記事で解説予定です。<br>→「OpenClawをMac miniで構築する方法」（準備中）</blockquote>
+
+<hr>
+
+<h2>Step①：Hostingerでサーバーを契約する</h2>
+
+<p>まず、HostingerのOpenClaw専用ページにアクセスします。</p>
+
+<p>▶ <a href="https://www.hostinger.com/vps/docker/openclaw" target="_blank" rel="noopener">Hostinger OpenClaw VPS</a></p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真①</p>
+  <p style="color: #555; margin: 0;">OpenClaw専用ページのトップ画面</p>
+</div>
+
+<p>このページからVPSを契約すると、OpenClawが最初からインストールされた状態でサーバーが立ち上がります。面倒なDockerやターミナルの設定は不要です。</p>
+
+<p><strong>なぜHostingerなのか？</strong> OpenClaw公式がHostinger用のワンクリックテンプレートを用意しており、技術的な知識がなくても数分でデプロイできるためです。他のVPS（ConoHa、DigitalOcean等）でも動かせますが、手動でDockerを設定する必要があり、初心者にはハードルが上がります。</p>
+
+<h3>プランの選択</h3>
+
+<p>プランはいくつかありますが、<strong>KVM 2</strong>がおすすめです。</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>プラン</th><th>CPU</th><th>メモリ</th><th>ストレージ</th><th>おすすめ度</th></tr>
+</thead>
+<tbody>
+<tr><td>KVM 1</td><td>1コア</td><td>4GB</td><td>50GB</td><td>△ 最小構成</td></tr>
+<tr><td><strong>KVM 2</strong></td><td><strong>2コア</strong></td><td><strong>8GB</strong></td><td><strong>100GB</strong></td><td><strong>◎ おすすめ</strong></td></tr>
+<tr><td>KVM 4</td><td>4コア</td><td>16GB</td><td>200GB</td><td>○ ローカルLLM向け</td></tr>
+</tbody>
+</table>
+
+<p><strong>なぜKVM 2がおすすめなのか？</strong> OpenClawは、毎回のリクエストでワークスペースやメモリ、会話履歴などをまとめて読み込むため、意外とメモリを消費します。KVM 1（4GB）だとセットアップの途中で動作が重くなったり、複数のタスクを同時に処理する際に不安定になることがあります。KVM 2（8GB）ならその心配がなく、日常的な利用には十分です。KVM 4は、VPS上でローカルLLMも動かしたい上級者向けです。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真②</p>
+  <p style="color: #555; margin: 0;">プラン選択画面（KVM 2を赤枠で囲む）</p>
+</div>
+
+<h3>契約期間の選択</h3>
+
+<p><strong>まず試してみたい方は1ヶ月プランがおすすめです。</strong> 最小コストでOpenClawを体験できます。長期利用が決まっている方は24ヶ月プランが月額最安です。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真③</p>
+  <p style="color: #555; margin: 0;">契約期間の選択画面（1ヶ月を赤枠で囲む）</p>
+</div>
+
+<h3>オプション設定</h3>
+
+<p>購入画面で以下のオプションを確認してください。</p>
+
+<ul>
+<li><strong>「Ready to use AI（すぐ使えるAI）」→ オフにする</strong>
+  <ul>
+  <li>後から自分でAPIキーを設定した方がコストを抑えられます</li>
+  </ul>
+</li>
+<li><strong>「自動バックアップ」→ オン推奨</strong>（月3ドル程度）
+  <ul>
+  <li>設定をミスしても「復元」ボタン1つで元に戻せるので安心です</li>
+  </ul>
+</li>
+</ul>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真④</p>
+  <p style="color: #555; margin: 0;">Ready to use AIをオフにする画面（注釈入り）</p>
+</div>
+
+<p>設定を確認したら、購入を完了してください。</p>
+
+<hr>
+
+<h2>Step②：OpenClaw Configuration画面を設定する</h2>
+
+<p>購入が完了すると、すぐに<strong>OpenClaw Configuration</strong>画面が表示されます。ここでGateway Token（ログイン用の鍵）とAPIキー（AIの頭脳）をまとめて設定します。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑤</p>
+  <p style="color: #555; margin: 0;">OpenClaw Configuration画面全体（各入力欄が見える状態）</p>
+</div>
+
+<p>この画面に表示される項目は以下の通りです。</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>項目</th><th>必須？</th><th>説明</th></tr>
+</thead>
+<tbody>
+<tr><td>Gateway Token</td><td>✅ 必須</td><td>OpenClawのダッシュボードにログインするための鍵（自動生成済み）</td></tr>
+<tr><td>Anthropic API Key</td><td>おすすめ</td><td>Claude（AI）を使うためのキー</td></tr>
+<tr><td>OpenAI API Key</td><td>任意</td><td>GPTモデルを使う場合</td></tr>
+<tr><td>Gemini API Key</td><td>任意</td><td>Google Geminiを使う場合</td></tr>
+<tr><td>X API Key</td><td>任意</td><td>Grokモデルを使う場合</td></tr>
+<tr><td>WhatsApp number</td><td>任意</td><td>WhatsApp連携する場合</td></tr>
+<tr><td>Telegram bot token</td><td>任意</td><td>Telegram連携する場合</td></tr>
+</tbody>
+</table>
+
+<p><strong>まずは「Gateway Token」と「Anthropic API Key」の2つだけ設定すればOKです。</strong> 他の項目は後から追加できるので、最初は空欄で問題ありません。</p>
+
+<h3>Gateway Tokenを保存する</h3>
+
+<p>Gateway Tokenは自動で生成されています。これはOpenClawのダッシュボードにログインするための<strong>マスターキー</strong>です。</p>
+
+<p><strong>必ずやること：</strong></p>
+<ul>
+<li>トークン横のコピーボタンをクリックし、パスワードマネージャーに保存する</li>
+</ul>
+
+<p><strong>やってはいけないこと：</strong></p>
+<ul>
+<li>チャットに貼り付ける</li>
+<li>スクリーンショットに残す</li>
+<li>メモファイルに保存する</li>
+</ul>
+
+<p>このトークンが漏洩すると、他人があなたのOpenClawを操作できてしまいます。パスワードと同じ扱いをしてください。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑥</p>
+  <p style="color: #555; margin: 0;">Gateway Token欄（トークン部分はモザイク処理、コピーボタンを赤枠で囲む）</p>
+</div>
+
+<hr>
+
+<h2>Step③：Anthropic APIキーを取得・設定する</h2>
+
+<p>OpenClawが自分で考えて動くためには、「頭脳」となるAI（LLM）を接続する必要があります。OpenAIやGeminiなど複数のAIに対応していますが、ここでは<strong>Anthropic Claude</strong>で設定します。Claudeは精度が高く、OpenClawとの相性が良いため、多くのユーザーに利用されています。</p>
+
+<h3>①：Anthropicアカウントを作成する</h3>
+
+<p>以下のURLからAnthropicのコンソールにアクセスし、アカウントを作成してください。</p>
+
+<p>▶ <a href="https://console.anthropic.com" target="_blank" rel="noopener">https://console.anthropic.com</a></p>
+
+<p>メールアドレスで登録するか、Googleアカウントでログインできます。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑦</p>
+  <p style="color: #555; margin: 0;">Anthropicコンソールのトップ画面</p>
+</div>
+
+<h3>②：クレジットをチャージする</h3>
+
+<p>アカウント作成後、APIを使うためにクレジット（残高）をチャージします。</p>
+
+<ol>
+<li>左メニューの <strong>「Settings」</strong> をクリック</li>
+<li><strong>「Billing」</strong> をクリック</li>
+<li>クレジットカード未登録の場合は、画面の案内に従ってカード情報を登録</li>
+<li><strong>「Buy credits」</strong> をクリックしてチャージ額を入力</li>
+</ol>
+
+<p>▶ <a href="https://console.anthropic.com/settings/billing" target="_blank" rel="noopener">直接リンク：https://console.anthropic.com/settings/billing</a></p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑧</p>
+  <p style="color: #555; margin: 0;">Billing画面（「Buy credits」ボタンを赤枠で囲む）</p>
+</div>
+
+<blockquote>💡 企業などでTeamプランを利用している場合は、APIキーの発行やクレジットの管理方法が異なります。社内のAPI管理担当者に相談してください。</blockquote>
+
+<p><strong>チャージ額のおすすめ：</strong></p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>チャージ額</th><th>Tier</th><th>1分あたりの入力トークン</th><th>おすすめ度</th></tr>
+</thead>
+<tbody>
+<tr><td>5ドル</td><td>Tier 1</td><td>3万トークン</td><td>△ セットアップ時に制限にかかりやすい</td></tr>
+<tr><td><strong>40ドル</strong></td><td><strong>Tier 2</strong></td><td><strong>45万トークン</strong></td><td><strong>◎ おすすめ</strong></td></tr>
+</tbody>
+</table>
+
+<p><strong>Tier（ティア）とは？</strong> AnthropicのAPIには利用量に応じた「ランク制度」があります。チャージした累計金額が上がるとTierも上がり、1分あたりに使えるリクエスト数やトークン量（＝AIに送れるテキストの量）が増えます。</p>
+
+<p>Tier 1（5ドルチャージ）の場合、1分あたりの制限は以下のようになっています。</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>モデル</th><th>リクエスト/分</th><th>入力トークン/分</th><th>出力トークン/分</th></tr>
+</thead>
+<tbody>
+<tr><td>Claude Sonnet</td><td>50回</td><td>3万</td><td>8千</td></tr>
+<tr><td>Claude Opus</td><td>50回</td><td>3万</td><td>8千</td></tr>
+<tr><td>Claude Haiku</td><td>50回</td><td>5万</td><td>1万</td></tr>
+</tbody>
+</table>
+
+<p>OpenClawは1回のリクエストで数万トークンを消費することがあるため、Tier 1だとすぐに制限に達し、OpenClawが一時的に無反応になることがあります。</p>
+
+<p><strong>なぜ40ドルなのか？</strong> 40ドルチャージするとTier 2に上がり、入力トークンの制限がTier 1の約15倍に緩和されます。セットアップもスムーズに進み、通常利用ならしばらく持つので、最初から40ドルがおすすめです。</p>
+
+<h3>③：支出ガードレールを設定する（高額請求の防止）</h3>
+
+<p>予想外の高額請求を防ぐために、月額の支出上限を設定しておきましょう。OpenClawは自律的に動き続けるため、気づかないうちにAPI呼び出しが増えることがあります。</p>
+
+<ol>
+<li>左メニューの <strong>「Settings」</strong> → <strong>「Limits」</strong> をクリック</li>
+<li><strong>「Change limit」</strong> をクリック</li>
+<li>月額上限を入力（例：100ドル）して保存</li>
+</ol>
+
+<p>上限に達するとAPIの利用が自動で停止するため、予想外の高額請求を防げます。</p>
+
+<p>▶ <a href="https://console.anthropic.com/settings/limits" target="_blank" rel="noopener">直接リンク：https://console.anthropic.com/settings/limits</a></p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑨</p>
+  <p style="color: #555; margin: 0;">Limits画面（赤枠で「Change limit」ボタンを囲む）</p>
+</div>
+
+<h3>④：APIキーを生成する</h3>
+
+<ol>
+<li>左メニューの <strong>「API Keys」</strong> をクリック</li>
+<li><strong>「Create Key」</strong> をクリック</li>
+<li>名前を入力（例：「OpenClaw」）</li>
+<li>キーが表示される → <strong>一度しか表示されない</strong>ので、すぐにパスワードマネージャーへ保存</li>
+</ol>
+
+<p>▶ <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">直接リンク：https://console.anthropic.com/settings/keys</a></p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑩</p>
+  <p style="color: #555; margin: 0;">API Keys画面（「Create Key」ボタンを赤枠で囲む）</p>
+</div>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑪</p>
+  <p style="color: #555; margin: 0;">生成されたAPIキー（キー部分はモザイク処理、コピーボタンを赤枠で囲む）</p>
+</div>
+
+<h3>⑤：APIキーをHostingerに貼り付ける</h3>
+
+<p>HostingerのOpenClaw Configuration画面に戻り、<strong>「Anthropic API Key」</strong> 欄にコピーしたキーを貼り付けます。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑫</p>
+  <p style="color: #555; margin: 0;">Configuration画面のAnthropic API Key欄（貼り付け箇所を赤枠で囲む）</p>
+</div>
+
+<hr>
+
+<h2>Step④：デプロイして起動する</h2>
+
+<p>Gateway TokenとAnthropic API Keyを入力したら、画面下部の<strong>「Deploy」ボタン</strong>をクリックします。</p>
+
+<p>数分でOpenClawのインストールが完了し、サーバーが起動します。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑬</p>
+  <p style="color: #555; margin: 0;">Deployボタン（赤枠で囲む）</p>
+</div>
+
+<blockquote>💡 Deploy後にHostingerのアンケート（「VPSの利用目的は？」等）が表示されることがありますが、これはHostinger側のアンケートでOpenClawの設定とは関係ありません。回答してもスキップしてもどちらでもOKです。</blockquote>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑭</p>
+  <p style="color: #555; margin: 0;">デプロイ完了画面</p>
+</div>
+
+<hr>
+
+<h2>Step⑤：OpenClaw Gatewayにログインする</h2>
+
+<p>デプロイが完了すると、HostingerのDocker Manager画面にOpenClawプロジェクトが「Running」と表示されます。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑮</p>
+  <p style="color: #555; margin: 0;">Docker Manager画面（OpenClawが「Running」になっている状態。「Open」ボタンを赤枠で囲む）</p>
+</div>
+
+<ol>
+<li>OpenClawプロジェクトの <strong>「Open」ボタン</strong> をクリック</li>
+<li>Gatewayのログイン画面が表示される</li>
+<li>Step②で保存した <strong>Gateway Token</strong> を貼り付けてログイン</li>
+</ol>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑯</p>
+  <p style="color: #555; margin: 0;">Gatewayログイン画面（トークン入力欄を赤枠で囲む）</p>
+</div>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑰</p>
+  <p style="color: #555; margin: 0;">ログイン後のダッシュボード画面</p>
+</div>
+
+<blockquote>⚠️ ブラウザに「Not Secure（保護されていない通信）」と表示される場合がありますが、これはHTTPS未設定のためです。公共Wi-Fiでの利用は避け、ご自宅のネットワークから接続してください。</blockquote>
+
+<hr>
+
+<h2>Step⑥：初回ブートストラップ（AIの人格設定）</h2>
+
+<p>ここまでの設定で、OpenClawは「動ける状態」になりました。最後に、OpenClawにあなたのことを教えて「あなた専用のAI」に仕上げましょう。</p>
+
+<p>Gatewayのチャット画面で <strong>「こんにちは」</strong> と送信すると、初回セットアップ（ブートストラップ）が始まります。日本語でやりとりできるので安心してください。OpenClawがあなたについていくつか質問してきます。</p>
+
+<p><strong>聞かれる内容：</strong></p>
+<ul>
+<li>あなたの名前、タイムゾーン</li>
+<li>OpenClawにどう呼んでほしいか</li>
+<li>ボットの口調・スタイル（フォーマル？カジュアル？）</li>
+<li>一緒にどんな仕事をするか</li>
+</ul>
+
+<p><strong>回答のコツ：</strong></p>
+<p>ここは丁寧に答えるのがおすすめです。OpenClawは永続メモリを持っているため、ここで設定した内容を記憶し、使うほどあなたに最適化されていきます。ChatGPTのようにタブを閉じたら忘れるということはありません。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑱</p>
+  <p style="color: #555; margin: 0;">初回ブートストラップのやりとり画面</p>
+</div>
+
+<hr>
+
+<h2>基本的な使い方</h2>
+
+<p>セットアップが完了したら、まずは基本操作を覚えておきましょう。</p>
+
+<h3>よく使うコマンド</h3>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>コマンド</th><th>説明</th></tr>
+</thead>
+<tbody>
+<tr><td><code>/new</code></td><td>会話をリセットして新しいセッションを開始する</td></tr>
+<tr><td><code>/status</code></td><td>現在のセッション情報やトークン使用量を確認する</td></tr>
+<tr><td><code>/restart</code></td><td>OpenClaw Gatewayを再起動する</td></tr>
+</tbody>
+</table>
+
+<p>チャット欄にそのまま入力すればOKです。</p>
+
+<blockquote>💡 会話が長くなってOpenClawの応答がおかしくなったときは、 <code>/new</code> で会話をリセットすると改善することが多いです。なお、リセットしても永続メモリに保存された情報は消えないので安心してください。</blockquote>
+
+<h3>試してみよう：ファイルを作らせてみる</h3>
+
+<p>セットアップが正しくできたか確認するために、OpenClawに簡単な指示を出してみましょう。チャット欄に以下を入力してください。</p>
+
+<blockquote>「ワークスペースに『hello-openclaw.txt』というファイルを作って、中に今日の日付と『OpenClawセットアップ完了！』と書いてください」</blockquote>
+
+<p>ファイルが作られたら、続けてこう聞いてみてください。</p>
+
+<blockquote>「さっき作ったファイルの中身を見せて」</blockquote>
+
+<p>OpenClawがファイルの中身を読み取って表示してくれます。ChatGPTやGeminiに同じことを頼むと、「ターミナルで<code>echo</code>コマンドを…」と手順を説明されるだけです。OpenClawは<strong>指示した瞬間にサーバー上で実際にファイルを作り、中身も読んで返してくれます。</strong> これが「教えてくれるAI」と「代わりにやってくれるAI」の違いです。</p>
+
+<div style="background: #fff3e0; border: 2px dashed #f57c00; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">📸 写真⑲</p>
+  <p style="color: #555; margin: 0;">ファイル作成の指示と結果のやりとり</p>
+</div>
+
+<hr>
+
+<h2>OpenClawのセキュリティリスク</h2>
+
+<div style="background: #e8f4fd; border: 2px dashed #4a90d9; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">🖼️ イメージF</p>
+  <p style="color: #555; margin: 0;">セキュリティを連想させるイメージ（鍵・盾・警告マーク）</p>
+</div>
+
+<h3>なぜセキュリティ対策が必須なのか</h3>
+
+<p>OpenClawは、ターミナルコマンドの実行、ファイルの読み書き、Web閲覧、メッセージ送信などの強力な権限を持っています。これは便利な反面、<strong>大きなセキュリティリスクも伴います。</strong></p>
+
+<p>安野高弘氏（AIエンジニア・衆議院議員）は、「理解のない人は使わない方がよい」と強い警告を発しています。</p>
+
+<h3>主なリスク3つ</h3>
+
+<p><strong>①情報漏洩・ファイル改ざん</strong></p>
+
+<p>OpenClawはサーバー上のファイルにアクセスできるため、気づかないうちに情報が外部に送信されたり、ファイルが削除・変更されるリスクがあります。APIキーや認証情報は平文で保存されるため、これらが漏洩すると深刻な被害につながります。(AIがPCでなんでもできちゃう、というイメージです。)</p>
+
+<p>実際に、OpenClawの認証情報ファイルを狙うマルウェア（RedLine、Lumma）がすでに確認されています。(対策は進んでいますが、まだ追いついていない状況です。)</p>
+
+<p><strong>②脆弱性の悪用</strong></p>
+
+<p>OpenClawには複数の脆弱性が発見されています。リモートから悪意あるコマンドを送り込み、OpenClawに実行させることが可能な脆弱性も報告されています。また、デフォルト設定のまま運用すると、Gatewayがインターネット上に露出し、誰でもアクセス可能な状態になるケースがあります。実際に多数の露出インスタンスが発見されています。</p>
+
+<p><strong>③ClawHub（スキルマーケット）のリスク</strong></p>
+
+<p>OpenClawの機能を拡張する「スキル」を公開・入手できるマーケットプレイス「ClawHub」にもリスクがあります。約4,000ファイルをスキャンした調査では、<strong>約7%（283個）に脆弱性が含まれていた</strong>ことが報告されています。人気のスキルでも問題を含むケースがあり、安野氏は「魔境に近い状態」と表現しています。</p>
+
+<h3>安全に使うための対策</h3>
+
+<p>OpenClawを使う際は、以下の対策を必ず行ってください。</p>
+
+<p><strong>①セキュリティドキュメントをボットに実装させる</strong></p>
+
+<p>OpenClaw公式のセキュリティドキュメントのURLをOpenClawに渡し、セキュリティ設定を自己実装させることができます。</p>
+
+<p><strong>②最小権限の原則を守る</strong></p>
+
+<p>メッセージ送信・ファイル削除・ネットワークリクエストなど、影響の大きい操作は<strong>事前承認制</strong>にしましょう。OpenClawが勝手に実行できないよう制限をかけます。</p>
+
+<p><strong>③ガードレールを設定する</strong></p>
+
+<p>タスクが3回失敗したら自動停止、実行時間の上限を10分に設定するなど、暴走を防ぐ仕組みを入れましょう。</p>
+
+<p><strong>④小さく始める</strong></p>
+
+<p>最初はTelegram連携だけ、スキルは1〜2個だけ、と範囲を絞って始めましょう。慣れてきたら徐々に拡張していくのが安全です。</p>
+
+<p><strong>⑤重要なデータがある環境では使わない</strong></p>
+
+<p>大切なファイルや機密情報があるマシンでは使わないでください。VPSやMac miniなど、OpenClaw専用の隔離された環境を用意することを強くおすすめします。</p>
+
+<blockquote>💡 セキュリティ対策の詳細は別記事で解説予定です。<br>→「OpenClawのセキュリティ対策」（準備中）</blockquote>
+
+<hr>
+
+<h2>OpenClawの料金・コスト目安</h2>
+
+<h3>OpenClaw本体は無料（オープンソース）</h3>
+
+<p>OpenClawのソフトウェア自体は<strong>完全に無料</strong>です。GitHubから誰でもダウンロードして使えます。</p>
+
+<p>お金がかかるのは、<strong>①実行環境</strong>と<strong>②LLM API</strong>の2つです。</p>
+
+<h3>実行環境のコスト</h3>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>環境</th><th>月額目安</th></tr>
+</thead>
+<tbody>
+<tr><td>自分のPC</td><td>0円（電気代のみ）</td></tr>
+<tr><td>VPS（Hostinger KVM 2）</td><td>月5〜12ドル</td></tr>
+<tr><td>Mac mini</td><td>初期投資 約8万円〜（以降は電気代のみ）</td></tr>
+</tbody>
+</table>
+
+<h3>LLM APIのコスト</h3>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>利用スタイル</th><th>月額目安</th></tr>
+</thead>
+<tbody>
+<tr><td>低価格LLM（Haiku等）</td><td>月5〜20ドル</td></tr>
+<tr><td>標準LLM（Sonnet等）</td><td>月30〜80ドル</td></tr>
+<tr><td>フラッグシップ（Opus等）</td><td>月100〜300ドル以上</td></tr>
+<tr><td>ローカルLLM</td><td>0円（Mac mini等のハードウェアが必要）</td></tr>
+</tbody>
+</table>
+
+<h3>コストを抑えるポイント</h3>
+
+<p>OpenClawでは、タスクの複雑さに応じて<strong>モデルを使い分ける</strong>ことでコストを大幅に削減できます。</p>
+
+<ul>
+<li><strong>複雑な推論</strong>（コード生成、分析等）：高性能モデル（Opus等）</li>
+<li><strong>日常タスク</strong>（メール要約、スケジュール確認等）：標準モデル（Sonnet等）</li>
+<li><strong>ルーチン作業</strong>（定型メッセージ送信等）：低価格モデル（Haiku等）</li>
+</ul>
+
+<p><strong>注意すべきコストの落とし穴</strong>：</p>
+<ul>
+<li>すべてのタスクをフラッグシップモデル（Opus等）で処理する → 月額が一気に膨らむ</li>
+<li>失敗時の再試行ループ → 気づかないうちにAPI呼び出しが増える</li>
+<li>高価格モデルでハートビート（定期チェック）を動かす → 30分ごとにコストが発生</li>
+</ul>
+
+<blockquote>💡 料金の詳細やコスト削減テクニックは別記事で解説予定です。<br>→「OpenClawの料金・コスト目安」（準備中）</blockquote>
+
+<hr>
+
+<h2>OpenClawの対応プラットフォーム一覧</h2>
+
+<p>OpenClawは15以上のメッセージングプラットフォームやサービスと連携できます。</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>カテゴリ</th><th>プラットフォーム</th></tr>
+</thead>
+<tbody>
+<tr><td>チャットアプリ</td><td>Telegram、WhatsApp、LINE、Discord、Slack</td></tr>
+<tr><td>メール</td><td>Gmail</td></tr>
+<tr><td>カレンダー</td><td>Googleカレンダー</td></tr>
+<tr><td>ストレージ</td><td>Google Drive、Docs、Sheets</td></tr>
+<tr><td>検索</td><td>Brave Search、Web検索</td></tr>
+<tr><td>開発</td><td>GitHub連携</td></tr>
+</tbody>
+</table>
+
+<blockquote>💡 各プラットフォームとの連携方法は別記事で解説予定です。<br>→「OpenClawのSlack連携方法」（準備中）<br>→「OpenClawのTelegram連携方法」（準備中）</blockquote>
+
+<hr>
+
+<h2>OpenClawに関するよくある質問（FAQ）</h2>
+
+<h3>OpenClawは無料で使えますか？</h3>
+
+<p><strong>ソフトウェア本体は完全に無料です。</strong> ただし、実行環境（VPSの月額費用等）とLLM API（Claude等の利用料）に費用がかかります。ローカルLLMを使えばAPI料金はゼロにできますが、それなりのスペックのハードウェア（Mac mini等）が必要です。</p>
+
+<h3>Windows環境でも使えますか？</h3>
+
+<p><strong>使えます。</strong> OpenClawはmacOS・Windows・Linuxのすべてに対応しています。</p>
+
+<h3>日本語での指示は通りますか？</h3>
+
+<p><strong>問題なく通ります。</strong> OpenClawの「頭脳」となるLLM（Claude、GPT等）が日本語に対応しているため、日本語で指示を出し、日本語で返答を受け取れます。初回セットアップ（ブートストラップ）も日本語で行えます。</p>
+
+<h3>企業での導入は可能ですか？</h3>
+
+<p>技術的には可能ですが、<strong>セキュリティリスクの理解と対策が必須です。</strong> OpenClawはサーバー上で強力な権限を持って動作するため、企業のガバナンス基準を満たすには、専用環境の構築、アクセス制御、監査ログの整備など、追加の対策が必要になります。</p>
+
+<p>セキュリティに精通した担当者がいない場合は慎重に検討すべきです。</p>
+
+<h3>ChatGPTやClaude Codeとは何が違うの？</h3>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+<thead>
+<tr><th>ツール</th><th>特徴</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>ChatGPT</strong></td><td>ブラウザ上で質問に回答するチャットAI。PCの操作はできない</td></tr>
+<tr><td><strong>Claude Code</strong></td><td>コーディング（プログラミング）に特化したAIエージェント</td></tr>
+<tr><td><strong>OpenClaw</strong></td><td>汎用AIエージェント基盤。コーディングだけでなく、メール・カレンダー・SNS等あらゆる業務を自動化。Claude Codeを内部で呼び出すこともできる</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>まとめ：OpenClawは次世代のAIアシスタント</h2>
+
+<p>この記事では、OpenClawの基本から、できること、ChatGPTとの違い、セットアップ手順、セキュリティリスクまで解説しました。</p>
+
+<p><strong>この記事のポイント：</strong></p>
+
+<ul>
+<li><strong>OpenClawとは</strong>：サーバー上で24時間稼働し、自律的に仕事をこなすオープンソースのAIエージェント</li>
+<li><strong>ChatGPTとの違い</strong>：チャットで回答するだけでなく、ファイル操作やメール送信など実際のアクションを実行できる</li>
+<li><strong>セットアップ</strong>：Hostinger VPSならワンクリックデプロイで、技術知識がなくても数分で始められる</li>
+<li><strong>セキュリティ</strong>：強力な権限を持つため、セキュリティ対策は必須。小さく始めて、慣れてから拡張するのが安全</li>
+</ul>
+
+<p>OpenClawは、コーディングエージェント（Claude Code等）が1年で「当たり前」になったのと同様に、<strong>1〜2年で多くの人が使う時代が来る可能性があります。</strong> ただし、現時点ではセキュリティリスクを十分に理解した上で、安全な環境から小さく始めることが大切です。</p>
+
+<p>まずはVPSでセットアップして、OpenClawの可能性を体感してみてください。</p>
+
+<div style="background: #e8f4fd; border: 2px dashed #4a90d9; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 18px; margin: 0 0 8px 0;">🖼️ イメージG</p>
+  <p style="color: #555; margin: 0;">OpenClawで快適に仕事している未来イメージ</p>
+</div>
