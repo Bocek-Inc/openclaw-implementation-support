@@ -163,6 +163,9 @@ git clone git@github.com:Bocek-Inc/bocek-architecture-document.git
 | Slack接続が深夜に切れる | ネットワーク不安定（当初スリープかと思ったがネットワーク問題だった） | ネットワーク復旧で解決 |
 | GitHub SSH接続 Permission denied | SSH鍵未登録 | 鍵作成→GitHub登録で解決 |
 | Gmail作成で電話番号認証に弾かれた | 同一番号での複数アカウント制限 | 会社のGoogle Workspaceで専用アドレスを作る方針に |
+| `openclaw daemon install` でBootstrap failed | SSH/ヘッドレス経由だとlaunchctlのGUIセッションが見えない | Mac miniにデスクトップログインした状態（画面共有 or モニター接続）でターミナルから実行する |
+| `nohup openclaw gateway &` が即終了 | 既に `openclaw gateway &` で起動したプロセスがポートを掴んでいた | 既存プロセスを活かし `disown %1` でSSHセッションから切り離す |
+| `disown -a` がjob not found | zshでは `-a` オプションが使えない | `disown %1` で対応 |
 
 ---
 
