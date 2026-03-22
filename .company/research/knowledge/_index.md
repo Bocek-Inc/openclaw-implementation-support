@@ -18,8 +18,10 @@
 | Skills・ClawHub | skills-clawhub.md | 95% | 動画1,3,公式ドキュメント,WenHao Yu記事,LumaDock記事 | - |
 | 対応プラットフォーム | platforms.md | 75% | 動画1,3,公式ドキュメント | 各チャネル連携手順詳細 |
 | 公式ドキュメント要約 | official-docs.md | 70% | 公式サイト,GitHub | 設定リファレンス完全版 |
+| VPS vs Mac mini比較 | vps-vs-macmini.md | 90% | Hostinger公式,Apple公式,BoilerplateHub,Analytics Vidhya | ローカルLLM実測データ |
 
 ## 更新履歴
 - 2026-03-16: 初版作成。topics/4ファイル + secretary/notes/2ファイルからテーマ別に再整理
 - 2026-03-16: 公式ドキュメント・GitHub調査結果を全テーマに反映。充足度全面更新
 - 2026-03-16: usecases.md大幅拡充（3件→36件）。Web調査一次記録をtopics/usecase-research-web.mdに保存
+- 2026-03-21: vps-vs-macmini.md新規作成。Mac mini記事執筆時の比較調査を統合

@@ -21,7 +21,7 @@ spreadsheet_url: "https://docs.google.com/spreadsheets/d/1R7Bwf5Q5E6RpFsYcUqyZKr
 | 4 | openclaw 法人 | 0 | 沖村 | 4 | | 未着手 |
 | 5 | openclaw 使い方 | 400 | 吉田 | 5 | | 未着手 |
 | 6 | openclaw docker | 250 | 吉田 | 6 | | 未着手 |
-| 7 | openclaw mac mini | 200 | 吉田 | 7 | | 未着手 |
+| 7 | openclaw mac mini | 200 | 吉田 | 7 | | 公開準備 |
 | 7 | openclaw windows | 100 | 吉田 | 7 | | 未着手 |
 | 9 | openclaw 料金 | 200 | 飯田 | 9 | | 未着手 |
 | 10 | openclaw skills | 150 | 吉田 | 10 | | 公開済み |

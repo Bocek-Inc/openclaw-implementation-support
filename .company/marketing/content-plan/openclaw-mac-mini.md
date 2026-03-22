@@ -60,16 +60,19 @@ priority: 7
 
 ### h2: OpenClawをMac miniで動かす3つのメリット
 - h3: ①ローカルファイルに直接アクセスできる
-  - VPSではできない。「このフォルダのExcelを集計して」がそのまま通る
-  - 素材: setup-environment.md（Mac miniだからこそできること）
-- h3: ②月100〜300円の電気代で24時間稼働できる
-  - Apple Siliconの省電力性。VPS月額$5-12との比較
-  - 表で比較: Mac mini vs VPS（初期コスト/月額/機能）
-  - 素材: 電気代データ、VPSコストデータ
-- h3: ③iMessage連携やローカルLLMなどMac限定の機能が使える
-  - macOS環境でしか利用できないiMessage連携
-  - Ollamaでローカルモデル実行（APIコスト削減＋プライバシー）
-  - 素材: setup-environment.md
+  - VPSではサーバー内のワークスペースしか操作できない
+  - Mac miniなら「このフォルダのExcelを集計して」がそのまま通る
+  - iMessage連携などmacOS限定機能も使える
+- h3: ②VPSよりセットアップがシンプル
+  - Mac miniはターミナル1つで全て完結する
+  - HostingerのWebUIは環境変数・チャネル接続程度。細かい設定にはSSH接続が必要
+  - 初心者が実際にやってみた体感として、VPSよりハードルが低い
+- h3: ③長期運用ならVPSより低コスト
+  - 表で比較: Mac mini vs VPS
+  - Mac mini: 初期94,800円 + 電気代月100-300円
+  - VPS（Hostinger）: 初期0円 + 月$5-7（約750-1,050円）
+  - 約7ヶ月で損益分岐、それ以降はMac miniが安い
+  - ローカルLLM（Ollama）を使えばAPIコストも削減可能（オプション紹介程度）
 
 ### h2: OpenClawのMac miniセットアップに必要なもの
 - h3: OpenClawに最適なMac miniのスペック・価格
@@ -105,16 +108,22 @@ priority: 7
   - 支出ガードレールの設定（月額上限、自動リロードOFF）
   - 🔧 オーナー作業: Anthropicダッシュボードのスクショ
   - <!-- 【画像: anthropic-api-key.png】スクショ。alt: Anthropic APIキー設定画面 -->
-- h3: ⑤チャットアプリとの連携（Telegram/Slack）
-  - Telegram: BotFather → トークン取得 → OpenClawに接続
-  - Slack: Slack App作成 → チャンネル連携
-  - 🔧 オーナー作業: 連携設定のスクショ
-  - <!-- 【画像: telegram-bot-setup.png】スクショ。alt: Telegram Bot連携の設定画面 -->
+- h3: ⑤Slack連携の設定
+  - Slack App作成（api.slack.com/apps）
+  - Socket Mode有効化 + App Token取得
+  - Bot Token Scopes設定 + Install to Workspace
+  - App Home → Messages Tab有効化
+  - Event Subscriptions設定（app_mention, message.im）
+  - OpenClaw側にトークン設定（環境変数 or 設定ファイル）
+  - ペアリング承認（openclaw pairing approve slack）
+  - 🔧 オーナー作業: Slack App設定画面のスクショ ✅撮影済み
+  - <!-- 【画像: slack-app-setup.png】スクショ。alt: Slack App作成画面 -->
+  - ※ 注意点: exportで設定したトークンは再起動で消える → 設定ファイルに書く方法も紹介
 - h3: ⑥初回ブートストラップ（初期対話）
-  - ボットの名前・性格・役割を設定する対話
-  - 日本語OK。具体的に説明するのがコツ
-  - 🔧 オーナー作業: ブートストラップ対話のスクショ
-  - <!-- 【画像: bootstrap-chat.png】スクショ。alt: OpenClaw初回ブートストラップの対話画面 -->
+  - Slackで初めてメッセージを送ると、OpenClawが自己紹介＋設定を求めてくる
+  - 日本語OK。名前・キャラ・用途を具体的に伝えるのがコツ
+  - 🔧 オーナー作業: ブートストラップ対話のスクショ ✅撮影済み
+  - <!-- 【画像: slack-bootstrap.png】スクショ。alt: Slack上でのOpenClaw初回ブートストラップの対話 -->
 
 ### h2: OpenClawをMac miniで常時稼働させる設定方法
 - h3: launchdでOpenClawを自動起動する方法
@@ -147,7 +156,9 @@ priority: 7
   | 「LLM request rejected」エラー | セッション不整合 | `/new`でリセット |
   | 権限エラーでファイルにアクセスできない | TCC権限未設定 | フルディスクアクセス付与 |
   | macOSアップデート後に動かない | システム更新による影響 | `openclaw doctor`で診断 |
-  | 🔧 実機で出た問題があれば追記 | | |
+  | 再起動後にSlack連携が切れる | exportで設定したトークンが消える | 設定ファイルに永続化 |
+  | gateway.mode未設定でgatewayが起動しない | 初期設定の漏れ | `openclaw config set gateway.mode local` |
+  | SlackでDMが送れない | App HomeのMessages Tabが無効 | api.slack.com/appsで有効化 |
 
 ### h2: まとめ：OpenClaw × Mac miniで手軽にAIエージェントを常時稼働させよう
 - 記事内容の振り返り
@@ -192,8 +203,8 @@ priority: 7
 
 ## ステータス
 - [x] 構成案作成（Phase 3）
-- [ ] オーナー確認（Phase 4）
-- [ ] 下書き執筆（Phase 5）
-- [ ] セルフチェック＋清書（Phase 6）
-- [ ] レビュー（Phase 7）
-- [ ] 公開準備（Phase 8）
+- [x] オーナー確認（Phase 4）
+- [x] 下書き執筆（Phase 5）
+- [x] セルフチェック＋清書（Phase 6）
+- [x] レビュー（Phase 7）
+- [x] 公開準備（Phase 8）
