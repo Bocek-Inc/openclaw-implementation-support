@@ -126,32 +126,39 @@ git clone git@github.com:Bocek-Inc/bocek-architecture-document.git
 
 ---
 
-## ステップ4: Claude Code Skillの設定
+## ステップ4: Claude Code Skillの設定（2026-03-22 完了）
 
-### 手順
-```bash
-# OpenClawのClaude Code Skillをインストール
-# 参考: https://github.com/Enderfga/openclaw-claude-code-skill
+### 結論
+別途インストール不要。`coding-agent`スキルがOpenClaw 2026.3.2に同梱されており、`claude`コマンドが入っていれば自動的に`✓ ready`になる。
+
+### 実施した設定
+```json
+// ~/.claude/settings.json
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "additionalDirectories": ["/Users/openclaw/repos"]
+  },
+  "env": {
+    "GH_TOKEN": "（GitHubトークン）"
+  }
+}
 ```
 
-### 設定ファイルに追加する内容（要調査）
-- ワークスペースのパス指定
-- 対象リポジトリの設定
-
-### メモ欄（作業中に記録）
-
+### つまづきポイント（記事ネタ）
+- `coding-agent`スキルは追加インストール不要だった（同梱済み）
+- `bypassPermissions`を設定しないと、自動化タスク中に確認ダイアログが大量に出る
+- `additionalDirectories`を設定しないと`~/repos/`配下のリポジトリにアクセスできない
 
 ---
 
-## ステップ5: 動作確認
+## ステップ5: 動作確認（2026-03-22 完了）
 
-### Slackから試すこと
-1. 「secretary/todos/ の最新TODOを見せて」
-2. 「research/topics/ のリサーチ一覧を出して」
-3. 「inbox/にメモを追加して」（書き込みテスト）
+### Slackから試したこと
+- 「taskhub-backendの最新PRを教えて」→ PR一覧が返ってきた ✅
 
 ### 結果記録
-
+- Slackの任意チャンネルから`@OpenClawMacmini`でメンション → PR一覧取得成功（2026-03-22）
 
 ---
 
@@ -163,9 +170,58 @@ git clone git@github.com:Bocek-Inc/bocek-architecture-document.git
 | Slack接続が深夜に切れる | ネットワーク不安定（当初スリープかと思ったがネットワーク問題だった） | ネットワーク復旧で解決 |
 | GitHub SSH接続 Permission denied | SSH鍵未登録 | 鍵作成→GitHub登録で解決 |
 | Gmail作成で電話番号認証に弾かれた | 同一番号での複数アカウント制限 | 会社のGoogle Workspaceで専用アドレスを作る方針に |
-| `openclaw daemon install` でBootstrap failed | SSH/ヘッドレス経由だとlaunchctlのGUIセッションが見えない | Mac miniにデスクトップログインした状態（画面共有 or モニター接続）でターミナルから実行する |
-| `nohup openclaw gateway &` が即終了 | 既に `openclaw gateway &` で起動したプロセスがポートを掴んでいた | 既存プロセスを活かし `disown %1` でSSHセッションから切り離す |
-| `disown -a` がjob not found | zshでは `-a` オプションが使えない | `disown %1` で対応 |
+| Slackメンションに反応しない | `groupPolicy: "allowlist"`がデフォルト | `"open"`に変更 |
+| launchd起動後にSlack接続が切れる | Slackトークンがplistに未設定（zshrcのenv変数はlaunchdに引き継がれない） | plistの`EnvironmentVariables`にトークンを追加 |
+| coding-agentがGitHub認証エラー | `gh`のトークンがkeyringに保存されず、サブプロセスに引き継がれない | `~/.config/gh/hosts.yml`に直接トークンを書き込む |
+
+---
+
+## ステップ6: Notion連携（2026-03-22 完了）
+
+### 実施内容
+- Notion Internal Integration「OpenClaw Bot」を作成
+  - 権限: Read/Update/Insert content + コメント読み書き
+- `NOTION_API_KEY`を`~/.claude/settings.json`とplistに追加
+- notionスキルが`✓ Ready`になったことを確認
+
+### つまづきポイント（記事ネタ）
+- `ntn_`始まりが新しいNotionトークン形式（旧: `secret_`）
+- Integration作成後、アクセスさせたいページに個別で「Connections → OpenClaw Bot」を追加する必要がある
+- 編集履歴に「OpenClaw Bot」と表示されるので誰が編集したか明確
+
+---
+
+## ステップ7: ナレッジ整備・動作確認（2026-03-22 完了）
+
+### 実施内容
+- `~/.openclaw/workspace/TOOLS.md`に全リポジトリの役割・困りごとマップを追記
+  - Project D（PHP→Kotlin移行）の背景
+  - ビジネス用語からリポジトリへのマッピング表
+  - `openclaw-implementation-support`リポジトリも追加
+- `cc-company`プラグインをインストール（`/company`スキルが使えるように）
+- `/companyスキル`: `claude plugin marketplace add` → `claude plugin install company@cc-company`
+
+### 動作確認結果
+- Slackスレッドからバグ修正依頼 → PRが自動作成された ✅
+- Notionページを読んで仕様確認 ✅
+- 複数チャンネルからのメンションに反応 ✅
+
+### 残課題
+- ~~チャンネルによってスレッド返信にならないことがある~~ → SOUL.mdで解決
+- ~~口調がまちまち~~ → SOUL.mdで解決
+
+### 口調・スレッド返信の設定（記事ネタ）
+`~/.openclaw/workspace/SOUL.md` に以下を追記することで改善：
+```markdown
+## 日本語での応対ルール
+- 常に日本語で返答する
+- 口調: 丁寧すぎず、フレンドリー。「〜ですね」「〜しました」程度
+- 「Great!」「承知いたしました」などの過剰な前置きは不要
+- Slackでの返答は必ずスレッド内で行う（チャンネルに新規投稿しない）
+```
+- SOUL.mdはOpenClawのキャラクター・行動指針を定義するファイル
+- チャンネルごとに口調を変えることもできる（例: 特定チャンネルだけギャル口調など）
+- デフォルトは英語・フォーマルなので、日本語チームで使う場合は必ず設定すべきポイント
 
 ---
 
