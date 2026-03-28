@@ -57,6 +57,52 @@ openclaw cron add \
 - `--session isolated` にするとメインセッションのコンテキストと分離される
 - `--exact` をつけないとデフォルトでstagger（ランダム遅延）が入る
 
+## 実用例: 使用量集計を独立cronで分離する設計（2026-03-28 追記）
+
+日報cronとは別に、軽量な使用量集計cronを独立させることで責務を分離できる。
+
+```bash
+openclaw cron add \
+  --name "usage-aggregate" \
+  --cron "55 23 * * *" \
+  --tz "Asia/Tokyo" \
+  --exact \
+  --channel slack \
+  --to "CHANNEL_ID" \
+  --session isolated \
+  --timeout-seconds 30 \
+  --message "python3 /path/to/scripts/aggregate-usage.py を実行してください。結果をログに出力するだけでOK。Slackへの投稿は不要。"
+```
+
+### なぜ分離するか
+- 日報cronはセッションログ解析・Slack投稿・PR作成など重い処理を含む（タイムアウトリスクあり）
+- 使用量集計は純粋にスクリプト実行のみで完結する → 軽量・高信頼
+- 集計データを事前に生成しておくことで、翌朝の日報cronがファイルを読むだけで済む（冪等性の確保）
+
+### 設計パターン
+1. 23:55 に `usage-aggregate` cronが当日分を `.json` に保存
+2. 翌8:00 に `daily-report` cronが `.json` を読んで日報に含める
+3. ファイルがなければ日報cron内でスクリプトを実行するフォールバックも持たせる
+
+## ハートビートでGitHub Issue監視（2026-03-28 追記）
+
+ハートビート処理内で `gh issue view <number>` を実行することで、特定Issueの状態を定期チェックできる。
+
+```markdown
+# HEARTBEAT.md 記載例
+- Issue #52536 が Open のままか確認 (`gh issue view 52536 -R owner/repo`)
+  → Close されていたら #alert-channel に通知
+```
+
+### ユースケース
+- 重要バグIssueの解消を監視してSlack通知
+- 外部ベンダーへの問い合わせIssueの返答待ち監視
+- リリースブロッカーの状態監視
+
+### 注意
+- heartbeatは主セッションのコンテキストが引き継がれるため、監視結果をmemoryに書いてセッション間で状態を保持できる
+- ただし`gh` CLIへのアクセスが必要なため、実行環境に `GH_TOKEN` が設定されていること
+
 ## 関連
 - [OpenClaw CLI docs](https://docs.openclaw.ai/cli/cron)
 - HEARTBEAT.mdとの使い分け: 正確なタイミング → cron、バッチ処理 → heartbeat
