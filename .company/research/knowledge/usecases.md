@@ -348,3 +348,26 @@ WhatsApp, Telegram, Discord, iMessage, Slack, LINE, Microsoft Teams, Google Chat
 
 ---
 *最終更新: 2026-03-16（Web調査で35件以上に拡充。一次記録: research/topics/usecase-research-web.md）*
+
+---
+
+## 実運用から得た知見: GitHub連携の落とし穴と対策 (2026-04-04追記)
+
+### GitHub PR作成時の確認フロー
+
+**実例:** `taskhub-backend` の非推奨APIルート削除タスク（PR #2037）
+
+Slackから「このAPIをrouteから消して」という依頼を受けてPRを作成。しかし誤って削除対象外のルートも消してしまうミスが発生。
+
+**教訓: PR作成前の確認ステップを踏むことが重要**
+1. 削除対象・保持対象のルートを明示的にリストアップ
+2. `git diff` でPR内容を確認してから送信
+3. 既存の確定済みコミットが混入していないかチェック（ブランチ起点の確認）
+
+**プロンプト設計のポイント:** 依頼文が曖昧な場合（「〇〇を消して」）、エージェント側で「これを消す / これは残す」を確認するか、PR説明に明示することで誤操作を防げる
+
+### GitHub Approveの重複発行問題
+
+Slackイベントの重複受信により、同一PRへのApproveが2件発行されるバグを確認（`openclaw-slack-integration-tips.md` に詳細あり）
+
+**開発チームへの共有方法:** OpenClaw本体のissueとして `issue #52536`（Slack first thread reply問題）に関連する形でフィードバック済み
