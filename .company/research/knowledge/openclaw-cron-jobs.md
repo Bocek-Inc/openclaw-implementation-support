@@ -57,6 +57,17 @@ openclaw cron add \
 - `--session isolated` にするとメインセッションのコンテキストと分離される
 - `--exact` をつけないとデフォルトでstagger（ランダム遅延）が入る
 
+## 日報cronの改善パターン
+
+初期導入後、ユーザーのフィードバックを受けて段階的に日報フォーマットを拡充する方法：
+
+1. **基本形から始める** — セッション数・トークン・コストのシンプルな集計
+2. **使用データを蓄積** — `scripts/aggregate-usage.py` 等でJSONファイルに日次集計
+3. **フィードバックで拡充** — 「チャンネル別コストも知りたい」→ スクリプトとcronメッセージを更新
+
+`--message` の内容はいつでも `openclaw cron edit` で更新できるため、日報フォーマットの進化に柔軟に対応できる。
+
 ## 関連
 - [OpenClaw CLI docs](https://docs.openclaw.ai/cli/cron)
 - HEARTBEAT.mdとの使い分け: 正確なタイミング → cron、バッチ処理 → heartbeat
+- pricing-cost.md → チャンネル別コスト可視化の実装パターン
