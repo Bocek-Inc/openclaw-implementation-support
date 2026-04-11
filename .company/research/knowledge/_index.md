@@ -9,6 +9,7 @@
 
 | テーマ | ファイル | 充足度 | 主なソース | 不足情報 |
 |--------|---------|--------|-----------|---------|
+| 技術調査・コードベース解析 | openclaw-technical-investigation.md | 70% | 2026-04実務事例 | より多様な言語・FW事例 |
 | 概要・歴史・人気 | overview.md | 85% | 動画1,3,競合分析,GitHub調査 | - |
 | ユースケース | usecases.md | 95% | 動画2,デモ知見,Web調査(英語圏・日本語圏・公式・ClawHub) | 法人ユースケースの深掘り |
 | チャットAIとの違い | chatgpt-comparison.md | 65% | 動画1,2,3,競合分析 | 最新のChatGPT機能との比較更新 |
@@ -25,3 +26,4 @@
 - 2026-03-16: 公式ドキュメント・GitHub調査結果を全テーマに反映。充足度全面更新
 - 2026-03-16: usecases.md大幅拡充（3件→36件）。Web調査一次記録をtopics/usecase-research-web.mdに保存
 - 2026-03-21: vps-vs-macmini.md新規作成。Mac mini記事執筆時の比較調査を統合
+- 2026-04-11: openclaw-technical-investigation.md新規作成。CI/Local差異・外部ライブラリ直読・設定診断の実務事例を追加
