@@ -57,6 +57,37 @@ openclaw cron add \
 - `--session isolated` にするとメインセッションのコンテキストと分離される
 - `--exact` をつけないとデフォルトでstagger（ランダム遅延）が入る
 
+## 実用パターン: 2ステップCron設計（単一責任の原則）
+
+複数のステップが必要なタスクは **Cronを分割する** と保守しやすい。
+
+```
+# ステップ1: データ集計（軽量・高頻度）
+openclaw cron add --name "usage-aggregate" --cron "55 23 * * *" ...
+  --message "aggregate-usage.pyを実行してください"
+
+# ステップ2: 日報生成・投稿（集計済みデータを使う）
+openclaw cron add --name "daily-report" --cron "0 8 * * *" ...
+  --message "前日のusage/*.jsonを読んで日報を作成してください"
+```
+
+**メリット:**
+- 集計だけ失敗した場合に日報ジョブへの影響がない
+- 各ジョブが単純になりデバッグしやすい
+- 集計データを他のジョブでも再利用できる
+
+## HEARTBEAT.mdでのPR監視パターン（2026-04-12確認）
+
+重要なPRの状態監視を HEARTBEAT.md に記載しておくと、heartbeat のたびに状態を確認できる。
+
+```markdown
+# HEARTBEAT.md
+## 監視中のPR
+- OpenClaw PR: https://github.com/.../pull/XX → マージされたら通知
+```
+
+heartbeat実行時にPRのopen/closed状態を確認し、変化があればSlackに通知するパターン。cronより軽量で、「クローズされたら終了」系のタスクに向いている。
+
 ## 関連
 - [OpenClaw CLI docs](https://docs.openclaw.ai/cli/cron)
 - HEARTBEAT.mdとの使い分け: 正確なタイミング → cron、バッチ処理 → heartbeat
