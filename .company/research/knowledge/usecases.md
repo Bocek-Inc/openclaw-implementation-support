@@ -347,4 +347,32 @@ WhatsApp, Telegram, Discord, iMessage, Slack, LINE, Microsoft Teams, Google Chat
 [出典: DataCamp, ClawOneClick, KDnuggets]
 
 ---
-*最終更新: 2026-03-16（Web調査で35件以上に拡充。一次記録: research/topics/usecase-research-web.md）*
+---
+
+## 実証済みユースケース（2026-04-14 追記）
+
+### D-1. スクリーンショットからフロントエンドバグ修正→PR作成の完全自動化
+- **シナリオ**: Slackにスクショを貼り付けて「これ直して」と送るだけ
+- **OpenClawの動作**:
+  1. 画像を受け取りバグを視認（ダークモードでボタン背景色がおかしいなど）
+  2. フロントエンドのコードを自動検索・特定
+  3. 既存スタイル定義（`classNames.ts`等）を参照して修正方針を決定
+  4. コード修正 → ブランチ作成 → コミット → Draft PR作成
+- **効果**: コード調査からPR作成まで人間なら1〜2時間かかる作業が自動完結
+- **実績**: `taskhub-neo-frontend` PR #3404（`OnlineMtgConfirmDialog.tsx` キャンセルボタン色修正）
+
+### D-2. NotionのスプリントキャパシティをSlack botで確認する定型チェック
+- **シナリオ**: スプリント開始前に全メンバーのNotionへの稼働時間記入を確認したい
+- **OpenClawの動作**: Notionのページ内テーブルを読み取り、全員の記入有無を確認してSlackスレッドに報告
+- **効果**: PMがNotionを開いて確認する手間を省略。「全員OK」「〇〇さん未記入」を即通知
+- **落とし穴**: Notion API連携が事前に必要（`NOTION_API_KEY`の設定）
+
+### D-3. GitHub PRへの画像添付（現時点の制約）
+- **課題**: バグ修正PRにスクショの「Before/After」画像を添付したい
+- **現状の制約**: GitHub REST APIは画像のアップロードをサポートしていない。コメントに画像を埋め込むにはGitHub WebのUIを経由する必要があり、ブラウザのログインセッションが必要
+- **回避策**: Chrome Extension Relay（`profile="chrome"`）でユーザーがGitHubにログイン済みのタブを使えば可能。ただしユーザーの手動操作（タブのアタッチ）が必要
+- **推奨**: 画像添付が不要な場合はCLIで完結。添付が必須の場合はユーザーに手動でPRに追加してもらう方が早い
+
+---
+
+*最終更新: 2026-04-14（D-1〜D-3 実証済みユースケース追記）*
