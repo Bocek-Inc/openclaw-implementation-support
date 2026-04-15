@@ -347,4 +347,27 @@ WhatsApp, Telegram, Discord, iMessage, Slack, LINE, Microsoft Teams, Google Chat
 [出典: DataCamp, ClawOneClick, KDnuggets]
 
 ---
-*最終更新: 2026-03-16（Web調査で35件以上に拡充。一次記録: research/topics/usecase-research-web.md）*
+---
+
+## 2026-04-15 追記: 実運用で確認されたユースケース
+
+### コードの仕組みをSlackで質問 → AIが直接コードを読んで回答
+
+**ユースケース:** `#030_openclaw_request` チャンネルで Sho さんが `secure-vault://` URLの仕組みについて質問 → OpenClawが taskhub-backend のコードを複数ファイルにわたってトレースし、設計意図を解説
+
+**具体的な流れ:**
+1. 開発者が Slack チャンネルで「このコードの仕組みを教えて」と質問（コード or 機能名のみでOK）
+2. OpenClaw が関連するソースファイル (`app/Services/`, `app/Http/Controllers/` 等) を読んで調査
+3. FE → BE → S3 の処理フロー全体を事実ベースで解説。「どのクラスのどのメソッドが何をしている」まで根拠付きで回答
+
+**効果:**
+- コードレビュー・設計相談が Slack チャットだけで完結
+- 複数ファイルをまたぐアーキテクチャ設計の意図まで解説できる
+- 「ドキュメントに書いていない実装詳細」はコードが一次情報になるため、口頭では説明しにくい部分もAIが正確に答えられる
+
+**導入Tips:**
+- 質問チャンネル（例: `#openclaw_request`）を作り、開発者が気軽に技術質問を投げられる場を整備する
+- コードベースへのアクセス（`~/repos/` 配下への read 権限）が前提
+- セキュリティ上、内部コードをAIに読ませることに抵抗がある場合はオンプレ構成（Mac mini等）で対応可能
+
+*最終更新: 2026-04-15*
