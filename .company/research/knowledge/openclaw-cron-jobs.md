@@ -57,6 +57,33 @@ openclaw cron add \
 - `--session isolated` にするとメインセッションのコンテキストと分離される
 - `--exact` をつけないとデフォルトでstagger（ランダム遅延）が入る
 
+## HEARTBEAT.mdを使った外部状態の軽量監視パターン
+
+HEARTBEAT.mdにGitHub Issue等の外部状態追跡タスクを書くことで、heartbeatのたびに自動チェックできる。
+
+### ユースケース例: GitHub Issueのクローズ監視
+
+```markdown
+## 定期チェック
+- [ ] openclaw/openclaw#12345 がクローズされたら、しゅーへいさんに報告してから設定変更を依頼する（自動変更NG）
+```
+
+エージェントはheartbeatのたびに `gh issue view openclaw/openclaw#12345 --json state` を実行し、OPEN→CLOSEDになったら通知する。
+
+### なぜcronではなくHEARTBEATか
+- 「クローズされたら1回だけ動く」という条件トリガー型のタスクはcronより向いている
+- heartbeatは30分おき程度で自然に実行されるため、polling間隔として適切
+- cronはタイミング固定・繰り返し向き、heartbeatは「状態変化を待つ」向き
+
+### 落とし穴
+- HEARTBEAT.mdに書きっぱなしにすると、条件達成後もチェックを続ける可能性がある
+- アクション完了後はHEARTBEAT.mdの該当行を削除（または`[x]`完了マーク）する運用にする
+
+### 2026-04-18 実例
+`openclaw/openclaw#52536`（Slack streaming thread bug）をHEARTBEAT.mdに記録し、毎heartbeatでghコマンドでステータス確認。クローズ時の通知→設定変更依頼まで自動化する設計。
+
+---
+
 ## 関連
 - [OpenClaw CLI docs](https://docs.openclaw.ai/cli/cron)
 - HEARTBEAT.mdとの使い分け: 正確なタイミング → cron、バッチ処理 → heartbeat
